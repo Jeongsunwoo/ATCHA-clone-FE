@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -18,8 +17,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+        <Header/>
         <Routes>
-          <Route element={<Header />}>
+          {/* <Route element={<Header />}> */}
             <Route path="/" element={<MainPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUp />} />
@@ -28,7 +28,7 @@ function App() {
             <Route path="/profilePage/:id" element={<ProfilePage />} />
             <Route path="/searchPage" element={<SearchPage />} />
             <Route path="/detailPage" element={<DetailPage />} />
-          </Route>
+          {/* </Route> */}
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
