@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import Dropdown from "./Dropdown";
+import { GlobalStyles } from "../../styles/global-styles";
 function Header() {
   const [userView, setuserView] = useState("false");
   return (
     <>
+     {GlobalStyles}
       <HeaderWrap>
         <Logo />
         <User
