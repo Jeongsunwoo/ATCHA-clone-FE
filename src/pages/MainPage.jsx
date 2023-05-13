@@ -1,10 +1,10 @@
 import React from "react";
 
 function MainPage() {
-  return(
-  <>
+  return (
+    <>
       <div>MainPage</div>;
-    </> 
+    </>
   );
 }
 

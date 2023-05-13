@@ -137,7 +137,7 @@ const SignUpWrapper = styled.div`
 const Logo = styled.button`
   width: 94px;
   height: 72px;
-  background: url('/via.placeholder.com/250/000000/ffffff') no-repeat center center;
+  background: url('img/atcha.png') no-repeat center center;
   background-size: contain;
   border: none;
   a {
