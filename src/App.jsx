@@ -10,6 +10,8 @@ import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
+import DetailMoviePage from "./pages/DetailMoviePage";
+import DetailTvPage from "./pages/DetailTvPage";
 
 const queryClient = new QueryClient();
 
@@ -27,8 +29,23 @@ function App() {
             <Route path="/homePage" element={<HomePage />} />
             <Route path="/profilePage/:id" element={<ProfilePage />} />
             <Route path="/searchPage" element={<SearchPage />} />
+<<<<<<< Updated upstream
             <Route path="/detailPage" element={<DetailPage />} />
           {/* </Route> */}
+=======
+            <Route path="/detailPage" element={<DetailPage />}>
+              {" "}
+            </Route>
+            <Route path="/detailPage" element={<DetailPage />}>
+              <Route
+                path="/detailPage/movie"
+                element={<DetailMoviePage />}
+              ></Route>
+
+              <Route path="/detailPage/tv" element={<DetailTvPage />}></Route>
+            </Route>
+          </Route>
+>>>>>>> Stashed changes
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
