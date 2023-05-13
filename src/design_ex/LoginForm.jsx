@@ -22,7 +22,7 @@ function LoginForm() {
             <FormHeader>
               <h2>로그인</h2>
               <Link to="/FindPassWord">
-                <a>비밀번호를 잊어버리셨나요?</a>
+                  비밀번호를 잊어버리셨나요?
               </Link>
             </FormHeader>
             <InputBox>
