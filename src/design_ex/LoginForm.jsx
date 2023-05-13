@@ -52,7 +52,6 @@ function LoginForm() {
     LoginMutation.mutate(newlogin);
   };
 
-
   return (
     <>
       <title>아챠 | 로그인</title>
@@ -70,9 +69,7 @@ function LoginForm() {
             <form>
               <FormHeader>
                 <h2>로그인</h2>
-                <Link to="/FindPassWord">
-                  <a>비밀번호를 잊어버리셨나요?</a>
-                </Link>
+                <Link to="/FindPassWord">비밀번호를 잊어버리셨나요?</Link>
               </FormHeader>
               <InputBox>
                 <input type="email"
@@ -86,6 +83,7 @@ function LoginForm() {
                 name="password"
                 onChange={onChangeLoginContent} />
               </InputBox>
+
               <Button onClick={loginHandler}>
                 로그인
               </Button>
@@ -94,21 +92,16 @@ function LoginForm() {
         </SignInWrapper>
       </SignInContainer>
     </>
-  )
+  );
 }
-
-export default LoginForm
-
-
+export default LoginForm;
 const FormHeader = styled.div`
   margin: 0px 0px 14px;
-
   & > h2 {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: -1px;
   }
-
   & > a {
     position: absolute;
     right: 0;
@@ -122,12 +115,10 @@ const FormHeader = styled.div`
       text-decoration: underline;
     }
   }
-`
-
+`;
 const InputBox = styled.div`
   position: relative;
   width: 100%;
-
   & > input {
     width: 100%;
     padding: 12px 44px 12px 14px;
@@ -140,22 +131,18 @@ const InputBox = styled.div`
     border-radius: 4px 4px 0px 0px;
     line-height: 1;
   }
-
   & > input::placeholder {
     color: #a7a8af;
   }
-
   &:last-of-type {
     position: relative;
     top: -1px;
   }
-
   &:last-of-type > input {
     border-radius: 0px 0px 4px 4px;
     border-bottom: 1px solid rgba(154, 151, 161, 0.2);
   }
-`
-
+`;
 const Button = styled.button`
   width: 100%;
   margin-top: 16px;
@@ -171,22 +158,18 @@ const Button = styled.button`
   font-size: 16px;
   line-height: 47px;
   height: 48px;
-
   cursor: pointer;
-
   &:disabled {
     opacity: 0.3;
   }
-`
-
-
+`;
 const SignInContainer = styled.div`
   width: 100%;
   height: 100%;
-  background: url('/via.placeholder.com/250/000000/ffffff') center center / cover no-repeat;
-
+  background: url("/via.placeholder.com/250/000000/ffffff") center center /
+    cover no-repeat;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -194,8 +177,7 @@ const SignInContainer = styled.div`
     height: 100%;
     background-color: rgba(18, 18, 24, 0.8);
   }
-`
-
+`;
 const SignInWrapper = styled.div`
   position: absolute;
   top: 50%;
@@ -203,10 +185,7 @@ const SignInWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 300px;
   color: white;
-`
-
-
-
+`;
 // 헤더 네비게이션
 const HeaderWrap = styled.nav`
   z-index: 80;
@@ -217,14 +196,13 @@ const HeaderWrap = styled.nav`
   left: 0;
   width: 100%;
   ${mq({
-    padding: ['0 3em', '0 1em', '0 1.5em', '0 1.5em', '0 2.5em', '0 2em 0 3em'],
+    padding: ["0 3em", "0 1em", "0 1.5em", "0 1.5em", "0 2.5em", "0 2em 0 3em"],
   })};
-`
-
+`;
 const Logo = styled.button`
   width: 94px;
   height: 72px;
-  background: url('/via.placeholder.com/250/000000/ffffff') no-repeat center center;
+  background: url("img/atcha.png") no-repeat center center;
   background-size: contain;
   border: none;
   a {
@@ -234,8 +212,7 @@ const Logo = styled.button`
     padding: 1em 5em;
     opacity: 0;
   }
-`
-
+`;
 const Login = styled.button`
   background: none;
   border: none;
@@ -246,6 +223,4 @@ const Login = styled.button`
     font-size: 0.9em;
     font-weight: 700;
   }
-`
-
-
+`;
