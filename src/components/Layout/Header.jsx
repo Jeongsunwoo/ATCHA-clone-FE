@@ -48,7 +48,7 @@ const Logo = styled.button`
   background: url("img/atcha.png") no-repeat center center;
   background-size: contain;
   border: none;
-`;
+`; 
 
 const User = styled.button`
   border: none;

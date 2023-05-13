@@ -11,7 +11,6 @@ function FindPasswordForm() {
           <Logo type="button">
             <Link to="/">아챠</Link>
           </Logo>
-
           <Login type="button">
             <Link to="/login">로그인</Link>
           </Login>

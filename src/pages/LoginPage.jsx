@@ -4,7 +4,6 @@ import LoginForm from "../design_ex/LoginForm";
 function LoginPage() {
   return (
     <>
-      <div>login</div>
         <LoginForm />
     </>
     );

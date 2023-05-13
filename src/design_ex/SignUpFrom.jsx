@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom'
 function SignupForm() {
   return (
     <>
-        <title>아챠 | 회원가입</title>
-
+      <title>아챠 | 회원가입</title>
       <SignUpContainer>
         <HeaderWrap>
           <Logo type="button">
