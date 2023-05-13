@@ -1,9 +1,57 @@
 import React from 'react'
+import { useState } from 'react';
 import styled from '@emotion/styled'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { mq } from "../styles/media-query";
+import { useMutation } from 'react-query';
+import { loginCertify } from '../api/login';
+import Cookies from "js-cookie";
 
 function LoginForm() {
+
+  const navigate = useNavigate();
+  const [login, setLogin] = useState({
+    email: "",
+    password: "",
+  });
+
+  const onChangeLoginContent = (e) => {
+    setLogin({
+      ...login,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  //TODO  토큰 보낼때 Cookies.get('token') 으로 보내기
+
+  const LoginMutation = useMutation(loginCertify, {
+    onSuccess: (response) => {
+      const token = response.headers.get("access_key").split(" ")[1];
+      Cookies.set("token", token);
+
+      console.log("리스폰스데이터 =>", response.data);
+      if ((response.data = "로그인 성공")) {
+        alert("로그인이 완료되었습니다");
+        navigate("/");
+      }
+    },
+  });
+
+  const loginHandler = (e) => {
+    e.preventDefault();
+
+    if (!login.email) {
+      alert("아이디 입력");
+    } else if (!login.password) {
+      alert("비밀번호 입력");
+    }
+    const newlogin = {
+      email: login.email,
+      password: login.password,
+    };
+    LoginMutation.mutate(newlogin);
+  };
+
 
   return (
     <>
@@ -27,12 +75,18 @@ function LoginForm() {
                 </Link>
               </FormHeader>
               <InputBox>
-                <input type="email" placeholder="이메일 (example@gmail.com)" />
+                <input type="email"
+                placeholder="이메일 (example@gmail.com)"
+                name="email"
+                onChange={onChangeLoginContent} />
               </InputBox>
               <InputBox>
-                <input type="password" placeholder="비밀번호" />
+                <input type="password"
+                placeholder="비밀번호"
+                name="password"
+                onChange={onChangeLoginContent} />
               </InputBox>
-              <Button >
+              <Button onClick={loginHandler}>
                 로그인
               </Button>
             </form>
