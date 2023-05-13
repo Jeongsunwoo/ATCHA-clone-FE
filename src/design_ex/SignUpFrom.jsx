@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
+import { mq } from "../styles/media-query";
 
 function SignupForm() {
   return (
     <>
-        <title>아챠 | 회원가입</title>
-
+      <title>아챠 | 회원가입</title>
       <SignUpContainer>
         <HeaderWrap>
           <Logo type="button">
@@ -195,10 +195,10 @@ const HeaderWrap = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  padding:0.3em;
+  ${mq({
+    padding: ['0 3em', '0 1em', '0 1.5em', '0 1.5em', '0 2.5em', '0 2em 0 3em'],
+  })};
 `
-
-
 
 const SignUpChecker = styled.div`
   width: 100%;

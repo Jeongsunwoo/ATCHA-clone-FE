@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
+import { mq } from "../styles/media-query";
 
 function LoginForm() {
 
@@ -18,6 +19,25 @@ function LoginForm() {
           </Login>
         </HeaderWrap>
         <SignInWrapper>
+        <div>
+          <form>
+            <FormHeader>
+              <h2>로그인</h2>
+              <Link to="/FindPassWord">
+                  비밀번호를 잊어버리셨나요?
+              </Link>
+            </FormHeader>
+            <InputBox>
+              <input type="email" placeholder="이메일 (example@gmail.com)"/>
+            </InputBox>
+            <InputBox>
+              <input type="password" placeholder="비밀번호"/>
+            </InputBox>
+            <Button >
+              로그인
+            </Button>
+          </form>
+        </div>
           <div>
             <form>
               <FormHeader>
@@ -162,7 +182,9 @@ const HeaderWrap = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  padding:0.3em;
+  ${mq({
+    padding: ['0 3em', '0 1em', '0 1.5em', '0 1.5em', '0 2.5em', '0 2em 0 3em'],
+  })};
 `
 
 const Logo = styled.button`
