@@ -3,6 +3,8 @@ import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
 
 function LoginForm() {
+
+
   return (
     <>
       <title>아챠 | 로그인</title>
@@ -11,31 +13,30 @@ function LoginForm() {
           <Logo type="button">
             <Link to="/">아챠</Link>
           </Logo>
-
           <Login type="button">
             <Link to="/signup">회원가입</Link>
           </Login>
         </HeaderWrap>
         <SignInWrapper>
-        <div>
-          <form>
-            <FormHeader>
-              <h2>로그인</h2>
-              <Link to="/FindPassWord">
-                <a>비밀번호를 잊어버리셨나요?</a>
-              </Link>
-            </FormHeader>
-            <InputBox>
-              <input type="email" placeholder="이메일 (example@gmail.com)"/>
-            </InputBox>
-            <InputBox>
-              <input type="password" placeholder="비밀번호"/>
-            </InputBox>
-            <Button >
-              로그인
-            </Button>
-          </form>
-        </div>
+          <div>
+            <form>
+              <FormHeader>
+                <h2>로그인</h2>
+                <Link to="/FindPassWord">
+                  <a>비밀번호를 잊어버리셨나요?</a>
+                </Link>
+              </FormHeader>
+              <InputBox>
+                <input type="email" placeholder="이메일 (example@gmail.com)" />
+              </InputBox>
+              <InputBox>
+                <input type="password" placeholder="비밀번호" />
+              </InputBox>
+              <Button >
+                로그인
+              </Button>
+            </form>
+          </div>
         </SignInWrapper>
       </SignInContainer>
     </>
