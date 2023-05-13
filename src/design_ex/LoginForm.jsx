@@ -5,7 +5,6 @@ import { mq } from "../styles/media-query";
 
 function LoginForm() {
 
-
   return (
     <>
       <title>아챠 | 로그인</title>
@@ -19,25 +18,6 @@ function LoginForm() {
           </Login>
         </HeaderWrap>
         <SignInWrapper>
-        <div>
-          <form>
-            <FormHeader>
-              <h2>로그인</h2>
-              <Link to="/FindPassWord">
-                  비밀번호를 잊어버리셨나요?
-              </Link>
-            </FormHeader>
-            <InputBox>
-              <input type="email" placeholder="이메일 (example@gmail.com)"/>
-            </InputBox>
-            <InputBox>
-              <input type="password" placeholder="비밀번호"/>
-            </InputBox>
-            <Button >
-              로그인
-            </Button>
-          </form>
-        </div>
           <div>
             <form>
               <FormHeader>
