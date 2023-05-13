@@ -1,9 +1,48 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { Link } from 'react-router-dom'
+import React from "react";
+import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 import { mq } from "../styles/media-query";
+import { useState } from "react";
+import { signUpUser } from "../api/signup";
+import { useMutation } from "react-query";
 
 function SignupForm() {
+  //   "email" : "String",
+  // "password" : "String",
+  // "nickname" : "String"
+
+  const [signUp, setSignUp] = useState({
+    email: "",
+    password: "",
+    nickname: "",
+  });
+
+  const signUpMutation = useMutation(signUpUser, {
+    onSuccess: (response) => {
+      console.log("성공여부:", response);
+      // navigate("/login");
+    },
+  });
+
+  const onChangeSignUpContent = (e) => {
+    setSignUp({
+      ...signUp,
+      [e.target.name]: e.target.value,
+    });
+  };
+  // console.log(signUp);
+
+  const onSubmitClickHandler = (e) => {
+    e.preventDefault();
+    const newPost = {
+      nickname: signUp.nickname,
+      email: signUp.email,
+      password: signUp.password,
+    };
+    signUpMutation.mutate(newPost);
+  };
+  // console.log(response);
+  // console.log("보내는거:", signUp.nickname);
   return (
     <>
       <title>아챠 | 회원가입</title>
@@ -20,53 +59,61 @@ function SignupForm() {
         <SignUpWrapper>
           <h2>회원가입</h2>
 
-             <form>
-                <InputBox>
-                  <div className="inputBox name">
-                    <input type="name" placeholder="이름 (2자 이상)" name="name" className="input" />
-                  </div>
+          <form>
+            <InputBox>
+              <div className="inputBox name">
+                <input
+                  type="name"
+                  placeholder="이름 (2자 이상)"
+                  name="nickname"
+                  className="input"
+                  onChange={onChangeSignUpContent}
+                />
+              </div>
 
-                  <div className="inputBox email">
-                    <input type="email" name="email" placeholder="이메일 (example@gamil.com)" className="input" />
-                  </div>
+              <div className="inputBox email">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="이메일 (example@gamil.com)"
+                  className="input"
+                  onChange={onChangeSignUpContent}
+                />
+              </div>
 
-                  <div className="inputBox password">
-                    <input
-                      type="password"
-                      name="password"
-                      placeholder="영문, 숫자, 특문 중 2개 조합 10자 이상"
-                      className="input"
-                    />
-                  </div>
-                </InputBox>
+              <div className="inputBox password">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="영문, 숫자, 특문 중 2개 조합 10자 이상"
+                  className="input"
+                  onChange={onChangeSignUpContent}
+                />
+              </div>
+            </InputBox>
 
-                <SignUpChecker>
-                <Checker>
-                  <label>
-                    <span>
-                      <input
-                        type="checkbox"
-                      />
-                    </span>
-                    전체 약관에 동의합니다.
-                  </label>
-                </Checker>
-                </SignUpChecker>
+            <SignUpChecker>
+              <Checker>
+                <label>
+                  <span>
+                    <input type="checkbox" />
+                  </span>
+                  전체 약관에 동의합니다.
+                </label>
+              </Checker>
+            </SignUpChecker>
 
-                <Button
-                  type="submit"
-                >
-                  계정 생성하기
-                </Button>
-              </form>
+            <Button type="submit" onClick={onSubmitClickHandler}>
+              계정 생성하기
+            </Button>
+          </form>
         </SignUpWrapper>
       </SignUpContainer>
     </>
-  )
+  );
 }
 
-export default SignupForm
-
+export default SignupForm;
 
 const InputBox = styled.div`
   .inputBox {
@@ -98,14 +145,15 @@ const InputBox = styled.div`
       letter-spacing: -0.5px;
     }
   }
-`
+`;
 
 export const SignUpContainer = styled.div`
   width: 100%;
   height: 100%;
-  background: url('/via.placeholder.com/250/000000/ffffff') center center / cover no-repeat;
+  background: url("/via.placeholder.com/250/000000/ffffff") center center /
+    cover no-repeat;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -120,7 +168,7 @@ export const SignUpContainer = styled.div`
     letter-spacing: -1px;
     margin: 0 0 14px;
   }
-`
+`;
 
 const SignUpWrapper = styled.div`
   position: absolute;
@@ -129,15 +177,13 @@ const SignUpWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 300px;
   color: white;
-`
-
-
-
+`;
 
 const Logo = styled.button`
   width: 94px;
   height: 72px;
-  background: url('/via.placeholder.com/250/000000/ffffff') no-repeat center center;
+  background: url("/via.placeholder.com/250/000000/ffffff") no-repeat center
+    center;
   background-size: contain;
   border: none;
   a {
@@ -147,7 +193,7 @@ const Logo = styled.button`
     padding: 1em 5em;
     opacity: 0;
   }
-`
+`;
 
 const Login = styled.button`
   background: none;
@@ -159,9 +205,7 @@ const Login = styled.button`
     font-size: 0.9em;
     font-weight: 700;
   }
-`
-
-
+`;
 
 const Button = styled.button`
   width: 100%;
@@ -184,7 +228,7 @@ const Button = styled.button`
   &:disabled {
     opacity: 0.3;
   }
-`
+`;
 
 // 헤더 네비게이션
 const HeaderWrap = styled.nav`
@@ -196,14 +240,14 @@ const HeaderWrap = styled.nav`
   left: 0;
   width: 100%;
   ${mq({
-    padding: ['0 3em', '0 1em', '0 1.5em', '0 1.5em', '0 2.5em', '0 2em 0 3em'],
+    padding: ["0 3em", "0 1em", "0 1.5em", "0 1.5em", "0 2.5em", "0 2em 0 3em"],
   })};
-`
+`;
 
 const SignUpChecker = styled.div`
   width: 100%;
   margin: 16px 0 0;
-`
+`;
 
 const Checker = styled.div`
   font-size: 12px;
@@ -226,7 +270,7 @@ const Checker = styled.div`
       border: 1px solid rgba(255, 255, 255, 0.5);
       border-radius: 50%;
     }
-    input[type='checkbox'] {
+    input[type="checkbox"] {
       width: 14px;
       height: 14px;
       border: 1px solid rgba(255, 255, 255, 0.5);
@@ -243,4 +287,4 @@ const Checker = styled.div`
       }
     }
   }
-`
+`;

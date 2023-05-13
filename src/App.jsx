@@ -22,22 +22,21 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          {/* <Route element={<Header />}> */}
-            <Route path="/" element={<MainPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/profileedit/:id" element={<ProfileEdit />} />
-            <Route path="/homePage" element={<HomePage />} />
-            <Route path="/profilePage/:id" element={<ProfilePage />} />
-            <Route path="/searchPage" element={<SearchPage />} />
-            <Route path="/detailPage" element={<DetailPage />}>
-              <Route
-                path="/detailPage/movie"
-                element={<DetailMoviePage />}
-              ></Route>
-              <Route path="/detailPage/tv" element={<DetailTvPage />}></Route>
-            </Route>
-            <Route path="/FindPassWord" element={<FindPassWordPage />}/>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/profileedit/:id" element={<ProfileEdit />} />
+          <Route path="/homePage" element={<HomePage />} />
+          <Route path="/profilePage/:id" element={<ProfilePage />} />
+          <Route path="/searchPage" element={<SearchPage />} />
+          <Route path="/detailPage" element={<DetailPage />}>
+            <Route
+              path="/detailPage/movie"
+              element={<DetailMoviePage />}
+            ></Route>
+            <Route path="/detailPage/tv" element={<DetailTvPage />}></Route>
+          </Route>
+          <Route path="/FindPassWord" element={<FindPassWordPage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
