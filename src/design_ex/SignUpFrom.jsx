@@ -14,7 +14,7 @@ function SignupForm() {
           </Logo>
 
           <Login type="button">
-            <Link to="/">버튼</Link>
+            <Link to="/login">로그인</Link>
           </Login>
         </HeaderWrap>
         <SignUpWrapper>

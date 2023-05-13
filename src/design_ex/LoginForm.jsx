@@ -13,7 +13,7 @@ function LoginForm() {
           </Logo>
 
           <Login type="button">
-            <Link to="/">버튼</Link>
+            <Link to="/signup">회원가입</Link>
           </Login>
         </HeaderWrap>
         <SignInWrapper>
@@ -21,7 +21,7 @@ function LoginForm() {
           <form>
             <FormHeader>
               <h2>로그인</h2>
-              <Link href="/">
+              <Link to="/FindPassWord">
                 <a>비밀번호를 잊어버리셨나요?</a>
               </Link>
             </FormHeader>

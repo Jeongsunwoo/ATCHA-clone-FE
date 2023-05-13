@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Link } from 'react-router-dom'
 
-function FindPassword() {
+function FindPasswordForm() {
   return (
     <>
       <title>아챠 | 비밀번호 찾기</title>
@@ -13,12 +13,12 @@ function FindPassword() {
           </Logo>
 
           <Login type="button">
-            <Link to="/">버튼</Link>
+            <Link to="/login">로그인</Link>
           </Login>
         </HeaderWrap>
         <FindPasswordWrapper>
           <form>
-            <Link to="/">
+            <Link to="/login">
               <BackSpace />
             </Link>
             <FormHeader>
@@ -46,7 +46,7 @@ function FindPassword() {
   );
 }
 
-export default FindPassword;
+export default FindPasswordForm;
 
 const FindPasswordContainer = styled.div`
   width: 100%;
