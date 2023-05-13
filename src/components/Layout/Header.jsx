@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { styled } from "styled-components";
 import Dropdown from "./Dropdown";
 import { GlobalStyles } from "../../styles/global-styles";
+import { mq } from "../../styles/media-query";
+
 function Header() {
   const [userView, setuserView] = useState("false");
   return (
@@ -12,8 +14,7 @@ function Header() {
         <User
           onClick={() => {
             setuserView(!userView);
-          }}
-        >
+          }}>
           유저
           {userView && <Dropdown />}
         </User>
@@ -40,7 +41,9 @@ const HeaderWrap = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  /* padding: "0 3em", "0 1em", "0 1.5em", "0 1.5em", "0 2.5em", "0 2em 0 3em"; */
+  ${mq({
+    padding: ['0 3em', '0 1em', '0 1.5em', '0 1.5em', '0 2.5em', '0 2em 0 3em'],
+  })};
 `;
 const Logo = styled.button`
   width: 94px;
