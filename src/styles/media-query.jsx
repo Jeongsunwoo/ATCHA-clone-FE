@@ -12,3 +12,12 @@ export const mq = facepaint([
   '@media(min-width: 768px)',
   '@media(min-width: 1024px)',
 ])
+
+
+
+
+export const HeaderPaddingStyle = css(
+  mq({
+    padding:['0 3em', '0 1em', '0 1.5em', '0 1.5em', '0 2.5em', '0 2em 0 3em'],
+  })
+);

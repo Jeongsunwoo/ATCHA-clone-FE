@@ -1,9 +1,10 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
+
 
 export const SignUpChecker = styled.div`
   width: 100%;
   margin: 16px 0 0;
-`;
+`
 
 export const Checker = styled.div`
   font-size: 12px;
@@ -26,7 +27,7 @@ export const Checker = styled.div`
       border: 1px solid rgba(255, 255, 255, 0.5);
       border-radius: 50%;
     }
-    input[type="checkbox"] {
+    input[type='checkbox'] {
       width: 14px;
       height: 14px;
       border: 1px solid rgba(255, 255, 255, 0.5);
@@ -43,7 +44,7 @@ export const Checker = styled.div`
       }
     }
   }
-`;
+`
 
 export const InputBox = styled.div`
   .inputBox {
@@ -75,7 +76,7 @@ export const InputBox = styled.div`
       letter-spacing: -0.5px;
     }
   }
-`;
+`
 
 export const SignUpForm = styled.form`
   width: 100%;
@@ -85,14 +86,14 @@ export const SignUpForm = styled.form`
       opacity: 1;
     }
   }
-`;
+`
 export const SignUpContainer = styled.div`
   width: 100%;
   height: 100%;
-  background: url("ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TVRZeE1EWTVPVGcxTnpFek5qUTVNVGswTnlKOS41cUgtcUQ4YW9LUV9aN3dRRWJxckdJbXpiMDFNUm5zYVRPYzBPUXdaXzE0")
+  background: url('ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1KbklsMHNJbkFpT2lJdmRqSXZjM1J2Y21VdmFXMWhaMlV2TVRZeE1EWTVPVGcxTnpFek5qUTVNVGswTnlKOS41cUgtcUQ4YW9LUV9aN3dRRWJxckdJbXpiMDFNUm5zYVRPYzBPUXdaXzE0')
     center center / cover no-repeat;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     top: 0;
@@ -107,7 +108,7 @@ export const SignUpContainer = styled.div`
     letter-spacing: -1px;
     margin: 0 0 14px;
   }
-`;
+`
 
 export const SignUpWrapper = styled.div`
   position: absolute;
@@ -116,4 +117,4 @@ export const SignUpWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 300px;
   color: white;
-`;
+`
