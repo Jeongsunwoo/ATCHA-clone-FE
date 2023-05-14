@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
 import { mq } from "../styles/media-query";
 import { useState } from "react";
 import { signUpUser } from "../api/signup";
 import { useMutation } from "react-query";
+import Header from "../components/Layout/Header";
 
 function SignupForm() {
   //   "email" : "String",
@@ -48,17 +48,10 @@ function SignupForm() {
       <title>아챠 | 회원가입</title>
       <SignUpContainer>
         <HeaderWrap>
-          <Logo type="button">
-            <Link to="/">아챠</Link>
-          </Logo>
-
-          <Login type="button">
-            <Link to="/login">로그인</Link>
-          </Login>
+          <Header text="로그인" link="/login" />
         </HeaderWrap>
         <SignUpWrapper>
           <h2>회원가입</h2>
-
           <form>
             <InputBox>
               <div className="inputBox name">
@@ -102,7 +95,6 @@ function SignupForm() {
                 </label>
               </Checker>
             </SignUpChecker>
-
             <Button type="submit" onClick={onSubmitClickHandler}>
               계정 생성하기
             </Button>
@@ -179,57 +171,6 @@ const SignUpWrapper = styled.div`
   color: white;
 `;
 
-const Logo = styled.button`
-  width: 94px;
-  height: 72px;
-  background: url("/via.placeholder.com/250/000000/ffffff") no-repeat center
-    center;
-  background-size: contain;
-  border: none;
-  a {
-    width: 100%;
-    height: 100%;
-    line-height: 0;
-    padding: 1em 5em;
-    opacity: 0;
-  }
-`;
-
-const Login = styled.button`
-  background: none;
-  border: none;
-  a {
-    background: #fff;
-    padding: 0.5em 1em;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: 700;
-  }
-`;
-
-const Button = styled.button`
-  width: 100%;
-  margin-top: 16px;
-  padding: 0px 0px 21px;
-  border-bottom: 1px solid rgba(154, 151, 161, 0.2);
-  background-color: rgb(248, 47, 98);
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-  letter-spacing: -0.1px;
-  text-align: center;
-  border-radius: 40px;
-  border: none;
-  font-size: 16px;
-  line-height: 47px;
-  height: 48px;
-
-  cursor: pointer;
-
-  &:disabled {
-    opacity: 0.3;
-  }
-`;
-
 // 헤더 네비게이션
 const HeaderWrap = styled.nav`
   z-index: 80;
@@ -286,5 +227,26 @@ const Checker = styled.div`
         background-size: contain;
       }
     }
+  }
+`;
+
+const Button = styled.button`
+  width: 100%;
+  margin-top: 16px;
+  padding: 0px 0px 21px;
+  border-bottom: 1px solid rgba(154, 151, 161, 0.2);
+  background-color: rgb(248, 47, 98);
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  letter-spacing: -0.1px;
+  text-align: center;
+  border-radius: 40px;
+  border: none;
+  font-size: 16px;
+  line-height: 47px;
+  height: 48px;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.3;
   }
 `;
