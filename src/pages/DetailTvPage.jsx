@@ -1,7 +1,7 @@
 import React from "react";
 
 function DetailTvPage() {
-  return <div>DetailTvPage</div>;
+  return <div></div>;
 }
 
 export default DetailTvPage;
