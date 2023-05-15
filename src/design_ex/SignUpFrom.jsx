@@ -91,8 +91,44 @@ function SignupForm() {
                   <span>
                     <input type="checkbox" />
                   </span>
-                  전체 약관에 동의합니다.
+                  전체 약관에 동의합니다
                 </label>
+                <br />
+                <label>
+                  <span>
+                    <input type="checkbox" />
+                  </span>
+                  만 14세 이상입니다
+                </label>
+                <br />
+                <label>
+                  <span>
+                    <input type="checkbox" />
+                  </span>
+                  왓챠피디아 서비스 이용약관에 동의합니다 (필수)
+                </label>
+                <br />
+                <label>
+                  <span>
+                    <input type="checkbox" />
+                  </span>
+                  왓챠 서비스 이용약관에 동의합니다 (필수)
+                </label>
+                <br />
+                <label>
+                  <span>
+                    <input type="checkbox" />
+                  </span>
+                  개인정보 수집 및 이용에 대한 안내에 동의합니다 (필수)
+                </label>
+                <br />
+                <label>
+                  <span>
+                    <input type="checkbox" />
+                  </span>
+                  신작 알림 이벤트 정보 수신에 동의합니다 (선택)
+                </label>
+                <br />
               </Checker>
             </SignUpChecker>
             <Button type="submit" onClick={onSubmitClickHandler}>
