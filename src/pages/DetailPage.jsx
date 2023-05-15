@@ -11,7 +11,7 @@ function DetailPage() {
   // console.log({ detailMovie });
 
   return (
-    <>Detail</>
+    <><div>Detail</div></>
     );
 }
 
