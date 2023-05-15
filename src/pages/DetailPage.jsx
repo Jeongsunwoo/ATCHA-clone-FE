@@ -1,7 +1,8 @@
 import React from "react";
 import { detailMovie } from "../api/detail/detailMovie";
 import { useQuery } from "react-query";
-import { detailTv } from "../api/detail/detailTv";
+// import { detailTv } from "../api/detail/detailTv";
+
 
 function DetailPage() {
   // const { error, data } = useQuery("detailmovie", detailMovie);
@@ -9,7 +10,9 @@ function DetailPage() {
   // console.log(error);
   // console.log({ detailMovie });
 
-  return <div>조선아</div>;
+  return (
+    <>Detail</>
+    );
 }
 
 export default DetailPage;
