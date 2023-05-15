@@ -10,7 +10,7 @@ const detailMovie = async () => {
       ACCESS_KEY: `Bearer ${token}`,
     },
   });
-  return response;
+  return response.data;
 };
 
 export { detailMovie };
