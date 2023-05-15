@@ -1,8 +1,7 @@
 import React from "react";
-import { detailMovie } from "../api/detail/detailMovie";
 
 function DetailMoviePage() {
-  return <div></div>;
+  return <div>영화상세보기페이지</div>;
 }
 
 export default DetailMoviePage;
