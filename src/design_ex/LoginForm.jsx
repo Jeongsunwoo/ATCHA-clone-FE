@@ -6,9 +6,10 @@ import { mq } from "../styles/media-query";
 import { useMutation } from 'react-query';
 import { loginCertify } from '../api/login';
 import Cookies from "js-cookie";
+import Header from '../components/Layout/Header';
+import Head from '../components/Layout/Head';
 
 function LoginForm() {
-
   const navigate = useNavigate();
   const [login, setLogin] = useState({
     email: "",
@@ -54,15 +55,12 @@ function LoginForm() {
 
   return (
     <>
-      <title>아챠 | 로그인</title>
+      <Head>
+        <title>아챠 | 로그인</title>
+      </Head>
       <SignInContainer>
         <HeaderWrap>
-          <Logo type="button">
-            <Link to="/">아챠</Link>
-          </Logo>
-          <Login type="button">
-            <Link to="/signup">회원가입</Link>
-          </Login>
+          <Header text="회원가입" link="/signup" />
         </HeaderWrap>
         <SignInWrapper>
           <div>
@@ -198,29 +196,4 @@ const HeaderWrap = styled.nav`
   ${mq({
     padding: ["0 3em", "0 1em", "0 1.5em", "0 1.5em", "0 2.5em", "0 2em 0 3em"],
   })};
-`;
-const Logo = styled.button`
-  width: 94px;
-  height: 72px;
-  background: url("img/atcha.png") no-repeat center center;
-  background-size: contain;
-  border: none;
-  a {
-    width: 100%;
-    height: 100%;
-    line-height: 0;
-    padding: 1em 5em;
-    opacity: 0;
-  }
-`;
-const Login = styled.button`
-  background: none;
-  border: none;
-  a {
-    background: #fff;
-    padding: 0.5em 1em;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: 700;
-  }
 `;
