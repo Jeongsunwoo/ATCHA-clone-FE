@@ -30,11 +30,8 @@ function App() {
           <Route path="/profilePage/:id" element={<ProfilePage />} />
           <Route path="/searchPage" element={<SearchPage />} />
           <Route path="/detailPage" element={<DetailPage />}>
-            <Route
-              path="/detailPage/movie"
-              element={<DetailMoviePage />}
-            ></Route>
-            <Route path="/detailPage/tv" element={<DetailTvPage />}></Route>
+            <Route path="movie" element={<DetailMoviePage />} />
+            <Route path="tv" element={<DetailTvPage />} />
           </Route>
           <Route path="/FindPassWord" element={<FindPassWordPage />} />
         </Routes>

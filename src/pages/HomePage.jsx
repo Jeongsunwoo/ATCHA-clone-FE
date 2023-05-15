@@ -14,7 +14,7 @@ function HomePage() {
             <li>찾기</li>
           </ul>
         </SidebarArea>
-         <ContentsArea>
+        <ContentsArea>
           {/* 작업시작 */}
           여기에 작업해 주세요!
         </ContentsArea>
@@ -24,8 +24,7 @@ function HomePage() {
 }
 export default HomePage;
 
-const HomeWrap = styled.div`
-`;
+const HomeWrap = styled.div``;
 
 const SidebarArea = styled.div`
   position: fixed;

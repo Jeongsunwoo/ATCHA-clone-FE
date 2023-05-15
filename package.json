@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-full-page": "^0.1.12",
     "react-fullpage": "^0.1.19",
+    "react-icons": "^4.8.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
