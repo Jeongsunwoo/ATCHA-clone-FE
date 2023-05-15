@@ -41,10 +41,6 @@ export const GlobalStyles = (
       }
       html,
       body,
-      #__next {
-        width: 100%;
-        height: 100%;
-      }
       a {
         color: inherit;
         text-decoration: none;
