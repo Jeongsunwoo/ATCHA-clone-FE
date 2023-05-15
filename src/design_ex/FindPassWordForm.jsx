@@ -21,7 +21,7 @@ function FindPasswordForm() {
               <BackSpace />
             </Link>
             <FormHeader>
-              <h2>비밀번호 찾기</h2>
+              <h2>비밀번호 재설정</h2>
             </FormHeader>
             <InputBox>
               <input type="email" placeholder="이메일 (example@gmail.com)" />

@@ -6,7 +6,7 @@ function MainPage() {
   return (
     <>
       <MainFullPage></MainFullPage>
-      <Header text="로그인" link="/login"/>
+      <Header text="로그인" link="/login" />
     </>
   );
 }

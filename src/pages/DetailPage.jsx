@@ -6,9 +6,6 @@ import { detailTv } from "../api/detail/detailTv";
 import { Outlet } from "react-router-dom";
 
 function DetailPage() {
-  // const { data: tvData } = useQuery("detailtv", detailTv);
-  // console.log("tv상세조회!:", tvData);
-
   return (
     <div>
       <Outlet />
