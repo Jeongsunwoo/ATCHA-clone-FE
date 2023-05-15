@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { styled } from "styled-components";
 import { mq } from "../../styles/media-query";
-import { GlobalStyles } from "../../styles/global-styles";
 import { Link } from "react-router-dom";
 
 
@@ -10,7 +9,6 @@ const Header = ({ text, link }) => {
 
   return (
     <>
-      {GlobalStyles}
       <HeaderWrap>
         <Logo type="button">
           <Link to="/">아챠</Link>
