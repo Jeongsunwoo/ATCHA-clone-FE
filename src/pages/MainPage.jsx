@@ -1,9 +1,10 @@
 import React from "react";
+import MainFullPage from "../components/main/MainFullPage";
 
 function MainPage() {
   return (
     <>
-      <div>MainPage</div>;
+      <MainFullPage></MainFullPage>
     </>
   );
 }
