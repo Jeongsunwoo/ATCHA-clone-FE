@@ -23,11 +23,14 @@
     "react-dom": "^18.2.0",
     "react-full-page": "^0.1.12",
     "react-fullpage": "^0.1.19",
+    "react-id-swiper": "^4.0.0",
     "react-icons": "^4.8.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
+    "resize-observer-polyfill": "^1.5.1",
     "styled-components": "^6.0.0-rc.1",
+    "swiper": "^9.3.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {

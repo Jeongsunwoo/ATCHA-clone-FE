@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { mq } from "../styles/media-query";
 import { useState } from "react";
 import { signUpUser } from "../api/signup";
 import { useMutation } from "react-query";
@@ -47,9 +46,7 @@ function SignupForm() {
     <>
       <title>아챠 | 회원가입</title>
       <SignUpContainer>
-        <HeaderWrap>
-          <Header text="로그인" link="/login" />
-        </HeaderWrap>
+        <Header text="로그인" link="/login" />
         <SignUpWrapper>
           <h2>회원가입</h2>
           <form>
@@ -205,20 +202,6 @@ const SignUpWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 300px;
   color: white;
-`;
-
-// 헤더 네비게이션
-const HeaderWrap = styled.nav`
-  z-index: 80;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  ${mq({
-    padding: ["0 3em", "0 1em", "0 1.5em", "0 1.5em", "0 2.5em", "0 2em 0 3em"],
-  })};
 `;
 
 const SignUpChecker = styled.div`

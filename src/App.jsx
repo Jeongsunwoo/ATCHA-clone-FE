@@ -16,12 +16,13 @@ import FindPassWordPage from "./pages/FindPassWordPage";
 
 const queryClient = new QueryClient();
 
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Header />
         <Routes>
+          <Route element={<Header />} />
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
@@ -30,7 +31,7 @@ function App() {
           <Route path="/profilePage" element={<ProfilePage />} />
           <Route path="/searchPage" element={<SearchPage />} />
           <Route path="/detailPage" element={<DetailPage />}>
-            <Route path="/detailPage/movie" element={<DetailMoviePage />} />
+            <Route path="/detailPage/movie" element={<DetailMoviePage />}/>
             <Route path="/detailPage/tv" element={<DetailTvPage />} />
           </Route>
           <Route path="/FindPassWord" element={<FindPassWordPage />} />
@@ -41,3 +42,6 @@ function App() {
 }
 
 export default App;
+
+
+

@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { useQuery } from "react-query";
 import { detailMovie } from "../api/detail/detailMovie";
-
 import Director from "../components/director/Director";
 
 function DetailMoviePage() {
+  
   const { data } = useQuery("detailmovie", detailMovie);
   console.log("영화상세조회:", data.data);
 
@@ -29,7 +29,6 @@ function DetailMoviePage() {
             <MovieTitleArea>
               <MovieTitle>스펜서</MovieTitle>
               <Moviegenre>로맨스</Moviegenre>
-
               <MovieInfo>
                 동일범의 소행으로 추정했지만, 체포한 범인들이 모두 평범한
                 사람들인 연쇄살인 사건이 발생한다. 아무런 전조 증상이 없었던
@@ -86,7 +85,6 @@ const SidebarArea = styled.div`
   color: white;
   /* background: #141517; */
   background: #4068b8;
-
   width: 240px;
   height: 100%;
   border-right: 1px #1b1c1d solid;
