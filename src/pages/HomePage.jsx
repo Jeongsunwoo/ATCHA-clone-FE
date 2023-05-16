@@ -1,22 +1,38 @@
 import React from "react";
 import { styled } from "styled-components";
+import Header from "../components/Layout/Header";
+import Row from "../design_ex/Row";
+import requests from "../api/request";
+import Sidebar from "../components/Layout/Sidebar";
 
 function HomePage() {
   return (
     <>
       {/* header 디자인 작업해서 넣을 예정 */}
+      <Header text="메인페이지" link="/homePage" />
       <HomeWrap>
         {/* 사이드메뉴 */}
-        <SidebarArea>
-          <ul>
-            <li>비디오</li>
-            <li>TV</li>
-            <li>찾기</li>
-          </ul>
-        </SidebarArea>
-         <ContentsArea>
+        <Sidebar />
+        <ContentsArea>
           {/* 작업시작 */}
-          여기에 작업해 주세요!
+          <Container>
+            <Row
+              title="Trending Now"
+              id="TN"
+              fetchUrl={requests.fetchTrending}
+            />
+            <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRated} />
+            <Row
+              title="Action Movies"
+              id="AM"
+              fetchUrl={requests.fetchActionMovies}
+            />
+            <Row
+              title="Comedy Movies"
+              id="CM"
+              fetchUrl={requests.fetchComedyMovies}
+            />
+          </Container>
         </ContentsArea>
       </HomeWrap>
     </>
@@ -25,27 +41,45 @@ function HomePage() {
 export default HomePage;
 
 const HomeWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  align-items: flex-start;
+  margin-top: 72px;
 `;
 
-const SidebarArea = styled.div`
-  position: fixed;
-  top: 72px;
-  left: 0;
-  color: white;
-  background: #141517;
-  width: 240px;
-  height: 100%;
-  border-right: 1px #1b1c1d solid;
-`;
+// const SidebarArea = styled.div`
+//   display: flex;
+//   overflow: auto;
+//   background: yellow;
+//   flex: 1;
+//   max-width: 240px;
+//   height: 100vh;
+// `;
 
 const ContentsArea = styled.div`
-  z-index: -1;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  width: 100%;
   height: 100vh;
-  padding: 72px 0 0 240px;
-  background: #141517;
-  color: white;
+`;
+
+const Container = styled.main`
+  position: relative;
+  overflow-x: hidden;
+  display: block;
+  top: 25px;
+  padding: 0 calc(3.5vw + 6px);
+
+  &:after {
+    background: url("/images/home-background.png") center center / cover
+      no-repeat fixed;
+    content: "";
+    position: absolute;
+    inset: 0px;
+    opacity: 1;
+    z-index: -1;
+  }
 `;

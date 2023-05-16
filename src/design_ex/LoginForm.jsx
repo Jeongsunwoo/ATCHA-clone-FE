@@ -2,7 +2,6 @@ import React from 'react'
 import { useState } from 'react';
 import styled from '@emotion/styled'
 import { Link, useNavigate } from 'react-router-dom'
-import { mq } from "../styles/media-query";
 import { useMutation } from 'react-query';
 import { loginCertify } from '../api/login';
 import Cookies from "js-cookie";
@@ -59,9 +58,7 @@ function LoginForm() {
         <title>아챠 | 로그인</title>
       </Head>
       <SignInContainer>
-        <HeaderWrap>
-          <Header text="회원가입" link="/signup" />
-        </HeaderWrap>
+        <Header text="회원가입" link="/signup" />
         <SignInWrapper>
           <div>
             <form>
@@ -183,17 +180,4 @@ const SignInWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 300px;
   color: white;
-`;
-// 헤더 네비게이션
-const HeaderWrap = styled.nav`
-  z-index: 80;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  ${mq({
-    padding: ["0 3em", "0 1em", "0 1.5em", "0 1.5em", "0 2.5em", "0 2em 0 3em"],
-  })};
 `;
