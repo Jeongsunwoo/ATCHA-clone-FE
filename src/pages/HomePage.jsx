@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import Header from "../components/Layout/Header";
 import Row from "../design_ex/Row";
-import requests from "../api/request";
+// import requests from "../api/request";
 import Sidebar from "../components/Layout/Sidebar";
 
 function HomePage() {
@@ -16,7 +16,7 @@ function HomePage() {
         <ContentsArea>
           {/* 작업시작 */}
           <Container>
-            <Row
+            {/* <Row
               title="Trending Now"
               id="TN"
               fetchUrl={requests.fetchTrending}
@@ -31,7 +31,7 @@ function HomePage() {
               title="Comedy Movies"
               id="CM"
               fetchUrl={requests.fetchComedyMovies}
-            />
+            /> */}
           </Container>
         </ContentsArea>
       </HomeWrap>

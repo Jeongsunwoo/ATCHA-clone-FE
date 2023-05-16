@@ -6,7 +6,6 @@ function ProfileEditPage() {
   return (
     <>
     <ProFileEdit />
-    <div>test</div>
     </>
   )
 }
