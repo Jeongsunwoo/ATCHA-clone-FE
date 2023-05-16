@@ -40,6 +40,7 @@ function HomePage() {
 }
 export default HomePage;
 
+
 const HomeWrap = styled.div`
   display: flex;
   flex-direction: row;
