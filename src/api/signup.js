@@ -7,7 +7,6 @@ const signUpUser = async (newPost) => {
       newPost
     );
     return response;
-    console.log(response);
   } catch (error) {
     console.log(error);
   }
