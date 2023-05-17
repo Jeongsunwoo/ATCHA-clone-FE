@@ -6,10 +6,13 @@ import { detailMovie } from "../../api/detail/detailMovie";
 import Director from "../director/Director";
 import Review from "./Review";
 import Sidebar from "../Layout/Sidebar";
+import { useParams } from "react-router-dom";
 
-function DetailMovie() {
-  // const { data } = useQuery("detailmovie", detailMovie);
-  // console.log("영화상세조회:", data);
+function DetailMovie({ id }) {
+  
+  const { data } = useQuery("detailmovie", () => detailMovie(id));
+  console.log("id111 => ",id)
+  console.log("영화상세조회:", data);
   // const MovieInfo = data.data;
   // console.log("이거:", MovieInfo.title);
 
