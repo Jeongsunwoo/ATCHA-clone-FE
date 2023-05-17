@@ -11,7 +11,6 @@ import ProfilePage from "./pages/ProfilePage";
 import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
 import DetailMoviePage from "./pages/DetailMoviePage";
-import DetailTvPage from "./pages/DetailTvPage";
 import FindPassWordPage from "./pages/FindPassWordPage";
 import ResetPassWordPage from "./pages/ResetPassWordPage";
 import Sidebar from "./components/Layout/Sidebar";

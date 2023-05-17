@@ -26,11 +26,10 @@ const useInput = () => {
 };
 // "http://54.180.120.82:8080/atcha/
 const upDatePost = async (payload) => {
+  console.log("페이로드 값 => ", payload);
   const token = Cookies.get("token");
-  // await axios.put(`${process.env.REACT_APP_SERVER_URL}/members/mypage`, {
-  await axios.put("http://54.180.120.82:8080/atcha/members/mypage", {
-    image: payload.image,
-    nickname: payload.nickname,
+  await axios.put(`${process.env.REACT_APP_SERVER_URL}/members/mypage`, {
+    payload,
     headers: {
       ACCESS_KEY: `Bearer ${token}`,
     },

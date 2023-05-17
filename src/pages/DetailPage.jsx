@@ -1,21 +1,12 @@
 import React from "react";
-import { styled } from "styled-components";
-import Sidebar from "../components/Layout/Sidebar";
-// import { detailMovie } from "../api/detail/detailMovie";
-// import { useQuery } from "react-query";
-// import { detailTv } from "../api/detail/detailTv";
-import { detailTv } from "../api/detail/detailTv";
-import { Outlet } from "react-router-dom";
+import DetailMoviePage from "./DetailMoviePage";
 
 function DetailPage() {
   return (
     <div>
-      <Outlet />
+      <DetailMoviePage />
     </div>
   );
 }
 
 export default DetailPage;
-
-
-

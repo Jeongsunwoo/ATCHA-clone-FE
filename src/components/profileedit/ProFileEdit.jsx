@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { styled } from "styled-components";
 import {
@@ -6,6 +7,7 @@ import {
   useInput,
 } from "../../api/profile/proFileList";
 import { useNavigate } from "react-router-dom";
+
 function ProFileEdit() {
   const { data } = useQuery("profilelist", proFileList);
   console.log("프로필 조회", data);
@@ -22,16 +24,20 @@ function ProFileEdit() {
       alert("수정 실패!");
     },
   });
+
   const handleClickUpdate = () => {
     if (!input) {
       alert("수정 내용을 입력해 주세요!");
       return;
     }
+
     const updatedPost = new FormData();
-    updatedPost.append("image", data?.image);
+    updatedPost.append("imageFile", input);
     updatedPost.append("nickname", input);
+
     mutation.mutate(updatedPost);
   };
+
   return (
     <Background>
       <ContentBox>
@@ -39,7 +45,15 @@ function ProFileEdit() {
         <Con>
           <ProfileCon>
             <ImgCon>
-              <Img src={`${data?.image}`} />
+              {data?.image ? (
+                <Img src={data?.image} />
+              ) : (
+                <Img
+                  src={
+                    "https://an2-img.amz.wtchn.net/image/v2/DuqxCHAo8tswoiaBFI0uYA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16QXdlRE13TUNKZExDSndJam9pTDNZeUwzTjBiM0psTDNWelpYSXZaR1ZtWVhWc2RGOXdjbTltYVd4bFgybHRZV2RsTDNCeWIyWnBiR1ZmTURNdWNHNW5JbjAuRzFSMVlqTC14VHJ5bXkyajIxMHkzcFZGX3EwSGJLODEyZWtjZjBsQjc1TQ"
+                  }
+                />
+              )}
             </ImgCon>
             <EditCon>
               <But>이미지 변경</But>

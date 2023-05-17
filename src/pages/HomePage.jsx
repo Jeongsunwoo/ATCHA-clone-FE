@@ -1,44 +1,28 @@
-// import React from "react";
-// import { styled } from "styled-components";
-// import Header from "../components/Layout/Header";
-// import Row from "../design_ex/Row";
-// import requests from "../api/request";
-// import Sidebar from "../components/Layout/Sidebar";
+import React from "react";
+import { styled } from "styled-components";
+import Header from "../components/Layout/Header";
+import Sidebar from "../components/Layout/Sidebar";
+import AllList from "../components/home/AllList";
 
-// function HomePage() {
-//   return (
-//     <>
-//       {/* header 디자인 작업해서 넣을 예정 */}
-//       <Header text="메인페이지" link="/homePage" />
-//       <HomeWrap>
-//         {/* 사이드메뉴 */}
-//         <Sidebar />
-//         <ContentsArea>
-//           {/* 작업시작 */}
-//           <Container>
-//             <Row
-//               title="Trending Now"
-//               id="TN"
-//               fetchUrl={requests.fetchTrending}
-//             />
-//             <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRated} />
-//             <Row
-//               title="Action Movies"
-//               id="AM"
-//               fetchUrl={requests.fetchActionMovies}
-//             />
-//             <Row
-//               title="Comedy Movies"
-//               id="CM"
-//               fetchUrl={requests.fetchComedyMovies}
-//             />
-//           </Container>
-//         </ContentsArea>
-//       </HomeWrap>
-//     </>
-//   );
-// }
-// export default HomePage;
+function HomePage() {
+  return (
+    <>
+      {/* header 디자인 작업해서 넣을 예정 */}
+      <Header text="마이프로필" link="/profileeditpage" />
+      <HomeWrap>
+        {/* 사이드메뉴 */}
+        <Sidebar />
+        <ContentsArea>
+          {/* 작업시작 */}
+          <Container>
+            <AllList />
+          </Container>
+        </ContentsArea>
+      </HomeWrap>
+    </>
+  );
+}
+export default HomePage;
 
 // const HomeWrap = styled.div`
 //   display: flex;
