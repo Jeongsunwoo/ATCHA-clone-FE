@@ -9,9 +9,10 @@ import Review from "./Review";
 import Sidebar from "../Layout/Sidebar";
 import AllList from "../home/AllList";
 import { useParams } from "react-router-dom";
+import { detailTv } from "../../api/detail/detailTv";
 // IoChatbubbleEllipses
 
-function DetailMovie() {
+function DetailTv() {
   //얘가거기서 보내준아이디값
   const { id } = useParams();
   // console.log("아이디:", id);
@@ -31,8 +32,8 @@ function DetailMovie() {
   // const {  data} = useQuery("detailmovie", () => newdetailAxios(id));
 
   const { data, isLoading, isError, error } = useQuery(
-    "detailMovie",
-    () => detailMovie(id),
+    "detailTv",
+    () => detailTv(id),
     {
       enabled: true,
       staleTime: 0,
@@ -112,7 +113,7 @@ function DetailMovie() {
     </>
   );
 }
-export default DetailMovie;
+export default DetailTv;
 
 const HomeWrap = styled.div``;
 

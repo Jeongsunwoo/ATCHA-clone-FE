@@ -1,30 +1,48 @@
-import React from 'react'
-import { useQuery } from 'react-query';
-import { allListAPI } from '../../api/listdata/allListAPI';
-import { styled } from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useQuery } from "react-query";
+import { allListAPI } from "../../api/listdata/allListAPI";
+import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 function AllList() {
   const navigate = useNavigate();
   const { data } = useQuery("allListAPI", allListAPI);
   console.log("모든 비디오 조회", data);
-
+  // console.log(data.id);
   return (
     <Container>
       <h1>홈</h1>
       <Content>
-        {data && data.map((allList) => (
-          console.log("이미지 주소 => ",allList.image),
-          <Img onClick={() => navigate(`/detailPage/${allList.id}`)} src={allList.image} />
-        ))}
-        <Img src={"https://an2-img.amz.wtchn.net/image/v2/ED7fQqzRjf5ABjGPcHTnIw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk56STVlREV3T0RCeE9EQWlYU3dpY0NJNklpOTJNaTl6ZEc5eVpTOXBiV0ZuWlM4eE5qWXlNRGs1TURnMU16WTBOelk0TkRBekluMC5QRlFWTF9LQnBqdDBaS3gyUldLcEJLQkFaOEdNbVRkaWt6aGpObjJ4aVFJ"}
+        {data &&
+          data.map(
+            (allList) => (
+              console.log("이미지 주소 => ", allList.image),
+              data.category === "MOVIE" ? (
+                <Img
+                  key={allList.id}
+                  onClick={() => navigate(`/detailPage/movie/${allList.id}`)}
+                  src={allList.image}
+                />
+              ) : (
+                <Img
+                  key={allList.id}
+                  onClick={() => navigate(`/detailPage/tv/${allList.id}`)}
+                  src={allList.image}
+                />
+              )
+            )
+          )}
+        <Img
+          src={
+            "https://an2-img.amz.wtchn.net/image/v2/ED7fQqzRjf5ABjGPcHTnIw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk56STVlREV3T0RCeE9EQWlYU3dpY0NJNklpOTJNaTl6ZEc5eVpTOXBiV0ZuWlM4eE5qWXlNRGs1TURnMU16WTBOelk0TkRBekluMC5QRlFWTF9LQnBqdDBaS3gyUldLcEJLQkFaOEdNbVRkaWt6aGpObjJ4aVFJ"
+          }
         />
       </Content>
     </Container>
   );
 }
 
-export default AllList
+export default AllList;
 
 const Container = styled.div`
   padding: 0 0 26px;
@@ -36,7 +54,7 @@ const Img = styled.img`
   width: 16%;
   height: 10%;
   cursor: pointer;
-`
+`;
 
 const Wrap = styled.div`
   width: 95%;

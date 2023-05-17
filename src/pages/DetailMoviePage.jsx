@@ -6,6 +6,7 @@ import DetailMovie from "../components/detail/DetailMovie";
 import Director from "../components/director/Director";
 import { detailMovie } from "../api/detail/detailMovie";
 import Sidebar from "../components/Layout/Sidebar";
+import AllList from "../components/home/AllList";
 
 function DetailMoviePage() {
   return (
