@@ -11,7 +11,7 @@ function HomePage() {
       <Header text="마이프로필" link="/profileeditpage" />
       <HomeWrap>
         {/* 사이드메뉴 */}
-        <Sidebar />
+        {/* <Sidebar /> */}
         <ContentsArea>
           {/* 작업시작 */}
           <Container>

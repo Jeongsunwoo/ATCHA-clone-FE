@@ -14,6 +14,7 @@ import DetailMoviePage from "./pages/DetailMoviePage";
 import FindPassWordPage from "./pages/FindPassWordPage";
 import ResetPassWordPage from "./pages/ResetPassWordPage";
 import Sidebar from "./components/Layout/Sidebar";
+import DetailTvPage from "./pages/DetailTvPage";
 
 const queryClient = new QueryClient();
 
@@ -32,7 +33,9 @@ function App() {
           <Route path="/profilePage" element={<ProfilePage />} />
           <Route path="/searchPage" element={<SearchPage />} />
           <Route path="/detailPage" element={<DetailPage />} />
-          <Route path="/detailPage/:id" element={<DetailMoviePage />} />
+          <Route path="/detailPage/movie/:id" element={<DetailMoviePage />} />
+          <Route path="/detailPage/tv/:id" element={<DetailTvPage />} />
+
           <Route path="/FindPassWord" element={<FindPassWordPage />} />
           <Route path="/resetPassword" element={<ResetPassWordPage />} />
         </Routes>

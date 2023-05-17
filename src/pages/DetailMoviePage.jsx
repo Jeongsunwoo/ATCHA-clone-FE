@@ -7,6 +7,7 @@ import Director from "../components/director/Director";
 import { detailMovie } from "../api/detail/detailMovie";
 import Sidebar from "../components/Layout/Sidebar";
 import { useParams } from "react-router-dom";
+import AllList from "../components/home/AllList";
 
 function DetailMoviePage() {
   const { id } = useParams()
