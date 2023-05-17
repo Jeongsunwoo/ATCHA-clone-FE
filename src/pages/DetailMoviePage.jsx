@@ -7,8 +7,8 @@ import Director from "../components/director/Director";
 
 function DetailMoviePage() {
   
-  const { data } = useQuery("detailmovie", detailMovie);
-  console.log("영화상세조회:", data.data);
+  // const { data } = useQuery("detailmovie", detailMovie);
+  // console.log("영화상세조회:", data.data);
 
   return (
     <>

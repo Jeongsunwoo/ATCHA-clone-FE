@@ -3,7 +3,6 @@ import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { styled } from 'styled-components'
 import { proFileList, upDatePost, useInput } from '../../api/profile/proFileList';
 import { useNavigate } from 'react-router-dom';
-import ImageUploader from './ProFileImg';
 
 
 function ProFileEdit() {
@@ -13,7 +12,6 @@ function ProFileEdit() {
     const navigate = useNavigate();
     const queryClient = useQueryClient()
     const [input, setInput] = useInput("")
-    const [selectedImage, setSelectedImage] = useState(null);
 
     const mutation = useMutation(upDatePost, {
         onSuccess: () => {
@@ -32,25 +30,11 @@ function ProFileEdit() {
             return;
         }
 
-        const updatedPost = {
-            image: data?.image,
-            nickname: input
-        }
+        const updatedPost = new FormData();
+        updatedPost.append("imageFile", input);
+        updatedPost.append("nickname", input);
 
         mutation.mutate(updatedPost)
-    };
-
-    const handleImageChange = (event) => {
-        const file = event.target.files[0];
-        const reader = new FileReader();
-
-        reader.onload = () => {
-            setSelectedImage(reader.result);
-        };
-
-        if (file) {
-            reader.readAsDataURL(file);
-        }
     };
 
     return (
@@ -60,11 +44,14 @@ function ProFileEdit() {
                 <Con>
                     <ProfileCon>
                         <ImgCon>
-                            <Img src={`${data?.image}`}
-                            />
+                            {data?.image ? (
+                                <Img src={data?.image} />
+                            ) : (
+                                <Img src={"https://an2-img.amz.wtchn.net/image/v2/DuqxCHAo8tswoiaBFI0uYA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk16QXdlRE13TUNKZExDSndJam9pTDNZeUwzTjBiM0psTDNWelpYSXZaR1ZtWVhWc2RGOXdjbTltYVd4bFgybHRZV2RsTDNCeWIyWnBiR1ZmTURNdWNHNW5JbjAuRzFSMVlqTC14VHJ5bXkyajIxMHkzcFZGX3EwSGJLODEyZWtjZjBsQjc1TQ"} />
+                            )}
                         </ImgCon>
                         <EditCon>
-                            <But onChange={handleImageChange} >이미지 변경
+                            <But >이미지 변경
                             </But>
                         </EditCon>
                     </ProfileCon>

@@ -23,10 +23,10 @@ const useInput = () => {
 };
 
 const upDatePost = async (payload) => {
+  console.log("페이로드 값 => ",payload)
   const token = Cookies.get("token");
   await axios.put(`${process.env.REACT_APP_SERVER_URL}/members/mypage`, {
-    image: payload.image,
-    nickname: payload.nickname,
+    payload,
     headers: {
       ACCESS_KEY: `Bearer ${token}`,
     },

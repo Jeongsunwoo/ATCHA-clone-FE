@@ -11,7 +11,6 @@ import ProfilePage from "./pages/ProfilePage";
 import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
 import DetailMoviePage from "./pages/DetailMoviePage";
-import DetailTvPage from "./pages/DetailTvPage";
 import FindPassWordPage from "./pages/FindPassWordPage";
 
 const queryClient = new QueryClient();
@@ -30,10 +29,8 @@ function App() {
           <Route path="/homePage" element={<HomePage />} />
           <Route path="/profilePage" element={<ProfilePage />} />
           <Route path="/searchPage" element={<SearchPage />} />
-          <Route path="/detailPage" element={<DetailPage />}>
-            <Route path="/detailPage/movie" element={<DetailMoviePage />}/>
-            <Route path="/detailPage/tv" element={<DetailTvPage />} />
-          </Route>
+          <Route path="/detailPage" element={<DetailPage />}/>
+          <Route path="/detailPage/:id" element={<DetailMoviePage />}/>
           <Route path="/FindPassWord" element={<FindPassWordPage />} />
         </Routes>
       </BrowserRouter>
