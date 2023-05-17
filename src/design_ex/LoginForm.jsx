@@ -1,12 +1,12 @@
-import React from 'react'
-import { useState } from 'react';
-import styled from '@emotion/styled'
-import { Link, useNavigate } from 'react-router-dom'
-import { useMutation } from 'react-query';
-import { loginCertify } from '../api/login';
+import React from "react";
+import { useState } from "react";
+import styled from "@emotion/styled";
+import { Link, useNavigate } from "react-router-dom";
+import { useMutation } from "react-query";
+import { loginCertify } from "../api/login";
 import Cookies from "js-cookie";
-import Header from '../components/Layout/Header';
-import Head from '../components/Layout/Head';
+import Header from "../components/Layout/Header";
+import Head from "../components/Layout/Head";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -65,21 +65,23 @@ function LoginForm() {
                 <Link to="/FindPassWord">비밀번호를 잊어버리셨나요?</Link>
               </FormHeader>
               <InputBox>
-                <input type="email"
-                placeholder="이메일 (example@gmail.com)"
-                name="email"
-                onChange={onChangeLoginContent} />
+                <input
+                  type="email"
+                  placeholder="이메일 (example@gmail.com)"
+                  name="email"
+                  onChange={onChangeLoginContent}
+                />
               </InputBox>
               <InputBox>
-                <input type="password"
-                placeholder="비밀번호"
-                name="password"
-                onChange={onChangeLoginContent} />
+                <input
+                  type="password"
+                  placeholder="비밀번호"
+                  name="password"
+                  onChange={onChangeLoginContent}
+                />
               </InputBox>
 
-              <Button onClick={loginHandler}>
-                로그인
-              </Button>
+              <Button onClick={loginHandler}>로그인</Button>
             </form>
           </div>
         </SignInWrapper>

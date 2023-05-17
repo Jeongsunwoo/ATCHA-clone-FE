@@ -8,7 +8,6 @@ import Director from "../director/Director";
 import Review from "./Review";
 import { useParams } from "react-router-dom";
 
-
 function DetailMovie() {
 
   const { id } = useParams();
@@ -21,38 +20,23 @@ function DetailMovie() {
       staleTime: 0,
     }
   );
+
   console.log(data);
 
   return (
     <>
-      {/* header 디자인 작업해서 넣을 예정 */}
       <HomeWrap>
-        {/* 사이드메뉴 */}
-
-        {/* <SidebarArea>
-          <ul>
-            <li>전체</li>
-            <li>영화</li>
-            <li>TV</li>
-          </ul>
-        </SidebarArea> */}
         <ContentsArea>
-          {/* 작업시작 */}
           <MovieInfoArea>
-            <MovieImage
-              src="https:an2-img.amz.wtchn.net/image/v2/tlVAlUSp_tgQnDjycWO9Mg.jpg%3Fjwt%3DZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1qZ3dlRFF3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5qRTJPVFF4TWprMU1EVTROakkwTVRjaWZRLmtxV3E5b2x1eTJUM1BsRXloRWdaTjA4TkNVRnNuMmtsbGFwN2phd2s3RUU"
-              alt="이미지"
-            ></MovieImage>
+            <MovieImage src={data?.image}></MovieImage>
             <MovieTitleArea>
-              <MovieTitle>스펜서</MovieTitle>
-              <Moviegenre>로맨스</Moviegenre>
+              <MovieTitle>{data?.title}</MovieTitle>
+              <Moviegenre>
+                {data?.genre}
+                {data?.time}평균{data?.star}|{data?.age}
+              </Moviegenre>
 
-              <MovieInfo>
-                동일범의 소행으로 추정했지만, 체포한 범인들이 모두 평범한
-                사람들인 연쇄살인 사건이 발생한다. 아무런 전조 증상이 없었던
-                범인들을 조사하던 끝에 형사 다카베는 유일한 공통점 하나를
-                찾아낸다.
-              </MovieInfo>
+              <MovieInfo>{data?.information}</MovieInfo>
             </MovieTitleArea>
           </MovieInfoArea>
           <MovieClickArea>
@@ -74,18 +58,10 @@ function DetailMovie() {
             <h2>감독/출연</h2>
           </DirectorNameWrap>
           <Container>
-            {/* 두개씩 들어가나 넣어본거요 */}
             <PersonArea>
-              <Director />
-            </PersonArea>
-            <PersonArea>
-              <Director />
-            </PersonArea>
-            <PersonArea>
-              <Director />
-            </PersonArea>
-            <PersonArea>
-              <Director />
+              {data?.castingList.map((item) => {
+                return <Director key={item.id} listdata={item} />;
+              })}
             </PersonArea>
           </Container>
 
@@ -232,10 +208,10 @@ const Container = styled.div`
 
 const PersonArea = styled.div`
   margin-left: 20px;
-  width: 20%;
-  /* font-size: 30px; */
-  /* flex-direction: column; */
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   padding: 10px;
   background-color: #000000;
-  /* height: 40%; */
 `;
