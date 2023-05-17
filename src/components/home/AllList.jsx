@@ -14,10 +14,10 @@ function AllList() {
       <h1>홈</h1>
       <Content>
         {data &&
-          data.map(
+          data?.map(
             (allList) => (
               console.log("이미지 주소 => ", allList.image),
-              data.category === "MOVIE" ? (
+              allList?.category === "MOVIE" ? (
                 <Img
                   key={allList.id}
                   onClick={() => navigate(`/detailPage/movie/${allList.id}`)}

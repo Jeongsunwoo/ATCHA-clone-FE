@@ -14,7 +14,7 @@ const detailMovie = async (id) => {
       },
     }
   );
-  return response.data;
+  return response.data.data;
 };
 
 export { detailMovie };

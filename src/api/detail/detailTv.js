@@ -14,7 +14,7 @@ const detailTv = async (id) => {
       },
     }
   );
-  return response;
+  return response.data.data;
 };
 
 export { detailTv };

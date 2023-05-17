@@ -15,6 +15,7 @@ import FindPassWordPage from "./pages/FindPassWordPage";
 import ResetPassWordPage from "./pages/ResetPassWordPage";
 import Sidebar from "./components/Layout/Sidebar";
 import DetailTvPage from "./pages/DetailTvPage";
+import LoginPageWithSidebar from "./pages/LoginPageWithSidebar";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ function App() {
           <Route element={<Header />} />
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
+
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/profileeditpage" element={<ProfileEditPage />} />
           <Route path="/homePage" element={<HomePage />} />

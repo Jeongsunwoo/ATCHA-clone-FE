@@ -55,7 +55,7 @@ const SidebarArea = styled.div`
   top: 72px;
   left: 0;
   color: white;
-  background: #232528;
+  background: #141517;
   width: 240px;
   height: 100%;
   border-right: 1px #101112 solid;
@@ -63,7 +63,7 @@ const SidebarArea = styled.div`
 
 const MenuArea = styled.div`
   padding: 20px;
-  background-color: #000000;
+  background-color: #141517;
   height: 35px;
   border-radius: 10px;
   margin-bottom: 2px;
