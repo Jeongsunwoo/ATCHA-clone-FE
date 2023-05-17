@@ -4,12 +4,14 @@ import { useState } from "react";
 import { signUpUser } from "../api/signup";
 import { useMutation } from "react-query";
 import Header from "../components/Layout/Header";
+import { useNavigate } from "react-router-dom";
 
 function SignupForm() {
   //   "email" : "String",
   // "password" : "String",
   // "nickname" : "String"
 
+  const navigate = useNavigate();
   const [signUp, setSignUp] = useState({
     email: "",
     password: "",
@@ -19,7 +21,7 @@ function SignupForm() {
   const signUpMutation = useMutation(signUpUser, {
     onSuccess: (response) => {
       console.log("성공여부:", response);
-      // navigate("/login");
+      navigate("/login");
     },
   });
 

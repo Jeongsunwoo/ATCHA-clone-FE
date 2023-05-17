@@ -30,7 +30,7 @@
     "react-scripts": "5.0.1",
     "resize-observer-polyfill": "^1.5.1",
     "styled-components": "^6.0.0-rc.1",
-    "swiper": "^9.3.2",
+    "swiper": "6.8.4",
     "web-vitals": "^2.1.0"
   },
   "scripts": {

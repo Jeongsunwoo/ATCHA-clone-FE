@@ -3,8 +3,39 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import Header from "../components/Layout/Header";
 import Head from "../components/Layout/Head";
+import { useState } from "react";
+import { useMutation } from "react-query";
+import { findPw } from "../api/listdata/findPw";
+import { useNavigate } from "react-router-dom";
 
 function FindPasswordForm() {
+  const [email, setEmail] = useState("");
+  // console.log(email);
+
+  const navigate = useNavigate();
+
+  const mutation = useMutation(findPw, {
+    onSuccess: (response) => {
+      console.log("리스폰스:", response.data);
+      // console.log(response.length);
+      //얘위에가 딱성공햇을때만나오는애고
+      // navigate("/resetPassword");
+    },
+    onError: (error) => {
+      // console.log(mutation.error);
+      // console.log(error.data);
+      // alert("바보");
+    },
+  });
+
+  const submitpwhandler = (e) => {
+    e.preventDefault();
+    const newPW = {
+      email: email,
+    };
+    mutation.mutate(newPW);
+  };
+
   return (
     <>
       <Head>
@@ -18,16 +49,27 @@ function FindPasswordForm() {
               <BackSpace />
             </Link>
             <FormHeader>
-              <h2>비밀번호 찾기</h2>
+              <h2>비밀번호 재설정</h2>
             </FormHeader>
             <InputBox>
-              <input type="email" placeholder="이메일 (example@gmail.com)" />
+              <input
+                type="email"
+                name="email"
+                placeholder="이메일 (example@gmail.com)"
+                value={email}
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+              />
             </InputBox>
+
             <Notice>
-              기존에 가입하신 이메일 주소를 입력해주시면 임시주소가 발송됩니다.
-              임시주소로 들어오신 뒤 새로운 비밀번호를 설정하세요.
+              가입하신 이메일 주소를 입력해 주시면 비밀번호 재설정 메일이
+              발송됩니다. 메일 확인 후 새로운 비밀번호를 설정해 주세요.
             </Notice>
-            <Button type="submit">확인</Button>
+            <Button type="submit" onClick={submitpwhandler}>
+              확인
+            </Button>
           </form>
         </FindPasswordWrapper>
       </FindPasswordContainer>

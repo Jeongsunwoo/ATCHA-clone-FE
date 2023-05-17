@@ -1,4 +1,4 @@
-// import axios from "../api/axios";
+// import axios from "axios";
 // import React, { useCallback, useEffect, useState } from "react";
 // import "./Row.css";
 // // import MovieModal from './MovieModal';
@@ -12,6 +12,11 @@
 // import "swiper/css/scrollbar";
 // import "swiper/css/pagination";
 // import styled from "styled-components";
+
+// import "swiper/swiper-bundle.min.css";
+// import "swiper/swiper.min.css";
+
+// import "swiper/swiper.min.css";
 
 // const Row = ({ title, id, fetchUrl }) => {
 //   const [movies, setMovies] = useState([]);

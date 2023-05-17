@@ -2,7 +2,6 @@ import React from "react";
 import DetailMoviePage from "./DetailMoviePage";
 
 function DetailPage() {
-
   return (
     <div>
       <DetailMoviePage />
@@ -11,6 +10,3 @@ function DetailPage() {
 }
 
 export default DetailPage;
-
-
-

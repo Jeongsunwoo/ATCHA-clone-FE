@@ -7,7 +7,7 @@ const detailTv = async () => {
   console.log("토큰:", token);
   const response = await axios.get(
     // `${process.env.REACT_APP_SERVER_URL}/movies/2`,
-    "http://54.180.120.82:8080/atcha/tvs/2",
+    "http://54.180.120.82:8080/atcha/tvs/24",
     {
       headers: {
         ACCESS_KEY: `Bearer ${token}`,

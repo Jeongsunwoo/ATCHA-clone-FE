@@ -1,64 +1,75 @@
 import { styled } from "styled-components";
 import React from "react";
 import { Link } from "react-router-dom";
+import SidebarItem from "./SidebarItem";
+import { BiCameraMovie } from "react-icons/bi";
+import { MdOndemandVideo } from "react-icons/md";
+import { HiOutlineFilm } from "react-icons/hi";
 
 function Sidebar() {
+  const menus = [
+    {
+      name: "전체",
+      path: "/homepage",
+      icon: <HiOutlineFilm style={{ marginRight: "5px" }} />,
+    },
+    {
+      name: "영화",
+      path: "/",
+      icon: <HiOutlineFilm style={{ marginRight: "5px" }} />,
+    },
+    {
+      name: "TV",
+      path: "/",
+      icon: <MdOndemandVideo style={{ marginRight: "5px" }} />,
+    },
+  ];
+
   return (
     <>
       <SidebarArea>
-        <ul>
-          <li><Link to="/detailPage/movie">비디오</Link></li>
-          <li><Link to="/detailPage/tv">TV</Link></li>
-          <li><Link to="/">찾기</Link></li>
-        </ul>
+        {menus.map((menu, index) => {
+          return (
+            <MenuArea key={index}>
+              <Link
+                exact
+                style={{ color: "white", textDecoration: "none" }}
+                to={menu.path}
+                activeStyle={{ color: "black" }}
+              >
+                {/* {menu.icon} */}
+                <SidebarItem menu={menu} />
+              </Link>
+            </MenuArea>
+          );
+        })}
       </SidebarArea>
     </>
   );
 }
+
 export default Sidebar;
 
 const SidebarArea = styled.div`
-  display: flex;
-  overflow: auto;
-  top: 0;
+  position: fixed;
+  top: 72px;
   left: 0;
-  flex: 1;
-  max-width: 240px;
-  height: 100vh;
-  background: #141517;
-  border-right: 1px #1b1c1d solid;
-  color:#fff;
+  color: white;
+  background: #232528;
+  width: 240px;
+  height: 100%;
+  border-right: 1px #101112 solid;
+`;
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: stretch;
-    background: transparent;
-    color: #d4d7db;
-    text-decoration: none;
-    width: 100%;
-    padding: 8px 12px;
-    border: 0;
-    border-radius: 8px;
-    appearance: none;
-    outline: none;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0px;
-    text-decoration: none;
-    line-height: 20px;
-    background: #303133;
-    color: #fff;
-  }
-
-  li{
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
+const MenuArea = styled.div`
+  padding: 20px;
+  background-color: #000000;
+  height: 35px;
+  border-radius: 10px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
 `;
