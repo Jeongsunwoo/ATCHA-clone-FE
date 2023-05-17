@@ -1,6 +1,8 @@
 import React from "react";
-import { detailMovie } from "../api/detail/detailMovie";
-import { useQuery } from "react-query";
+import { styled } from "styled-components";
+import Sidebar from "../components/Layout/Sidebar";
+// import { detailMovie } from "../api/detail/detailMovie";
+// import { useQuery } from "react-query";
 // import { detailTv } from "../api/detail/detailTv";
 import { detailTv } from "../api/detail/detailTv";
 import { Outlet } from "react-router-dom";
@@ -14,3 +16,6 @@ function DetailPage() {
 }
 
 export default DetailPage;
+
+
+

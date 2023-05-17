@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
-import { mq } from "../styles/media-query";
 import Header from "../components/Layout/Header";
 import Head from "../components/Layout/Head";
 import { useState } from "react";
@@ -43,9 +42,7 @@ function FindPasswordForm() {
         <title>아챠 | 비밀번호 찾기</title>
       </Head>
       <FindPasswordContainer>
-        <HeaderWrap>
-          <Header text="로그인" link="/login" />
-        </HeaderWrap>
+        <Header text="로그인" link="/login" />
         <FindPasswordWrapper>
           <form>
             <Link to="/login">
@@ -131,19 +128,6 @@ const Button = styled.button`
   }
 `;
 
-// 헤더 네비게이션
-const HeaderWrap = styled.nav`
-  z-index: 80;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  ${mq({
-    padding: ["0 3em", "0 1em", "0 1.5em", "0 1.5em", "0 2.5em", "0 2em 0 3em"],
-  })};
-`;
 
 const BackSpace = styled.a`
   position: absolute;

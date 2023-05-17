@@ -33,8 +33,6 @@ function Review() {
   };
 
   let score = clicked.filter(Boolean).length;
-  console.log("스코어:", score);
-  console.log(typeof score);
 
   //댓글추가
   const addMutation = useMutation(addReview, {
@@ -60,9 +58,7 @@ function Review() {
     <>
       <ReviewWrapper>
         <TitleWrapper>
-          <SmtitleWrapper>
-            <h2>왓챠피디아 사용자 평</h2>
-          </SmtitleWrapper>
+          <h2>왓챠피디아 사용자 평</h2>
         </TitleWrapper>
         {/* 얘아래부터 각각 리뷰들 */}
         <SeperateReview>
@@ -72,11 +68,11 @@ function Review() {
           ></InputBox>
           <Stars>
             {ARRAY.map((el, idx) => {
-              console.log(el);
+              // console.log(el);
               return (
                 <FaStar
                   key={idx}
-                  size="50"
+                  size="30"
                   onClick={() => handleStarClick(el)}
                   className={clicked[el] && "yellowStar"}
                 />
@@ -86,6 +82,11 @@ function Review() {
           <SubmitButton onClick={onSubmitClickHandler}>완료</SubmitButton>
         </SeperateReview>
       </ReviewWrapper>
+      {/* 뿌려주는데이터들 */}
+      {/* <CommentBody> */}
+      {content} <button>수정</button>
+      <button>삭제</button>
+      {/* </CommentBody> */}
     </>
   );
 }
@@ -98,23 +99,30 @@ const ReviewWrapper = styled.section`
 
 const TitleWrapper = styled.div`
   display: flex;
-  position: relative;
-  z-index: 1;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  align-items: flex-end;
-  font-size: initial;
-  margin-bottom: 5px;
-`;
-
-const SmtitleWrapper = styled.div`
-  display: flex;
   -webkit-box-align: center;
   align-items: center;
   min-width: 0px;
+
+  h2 {
+    margin-top: 20px;
+    margin-left: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 26px;
+  }
 `;
 
+// const SmtitleWrapper = styled.div`
+//   display: flex;
+//   -webkit-box-align: center;
+//   align-items: center;
+//   min-width: 0px;
+// `;
+
 const SeperateReview = styled.div`
+  margin-left: 20px;
   display: flex;
   align-items: flex-start;
   padding: 8px 0px;
@@ -134,7 +142,7 @@ const SubmitButton = styled.button`
   height: 40px;
   margin: 4px 20px;
 
-  background-color: pink;
+  background-color: #f82f62;
 `;
 
 const Stars = styled.div`

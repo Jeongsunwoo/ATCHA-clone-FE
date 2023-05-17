@@ -5,27 +5,34 @@ import { useQuery } from "react-query";
 import { detailMovie } from "../../api/detail/detailMovie";
 import Director from "../director/Director";
 import Review from "./Review";
+import Sidebar from "../Layout/Sidebar";
 
 function DetailMovie() {
-  const { data } = useQuery("detailmovie", detailMovie);
-  console.log("영화상세조회:", data);
+  // const { data } = useQuery("detailmovie", detailMovie);
+  // console.log("영화상세조회:", data);
+  // const MovieInfo = data.data;
+  // console.log("이거:", MovieInfo.title);
 
   return (
     <>
       {/* header 디자인 작업해서 넣을 예정 */}
       <HomeWrap>
         {/* 사이드메뉴 */}
-        <SidebarArea>
+
+        {/* <SidebarArea>
           <ul>
-            <li>비디오</li>
+            <li>전체</li>
+            <li>영화</li>
             <li>TV</li>
-            <li>찾기</li>
           </ul>
-        </SidebarArea>
+        </SidebarArea> */}
         <ContentsArea>
           {/* 작업시작 */}
           <MovieInfoArea>
-            <MovieImage></MovieImage>
+            <MovieImage
+              src="https:an2-img.amz.wtchn.net/image/v2/tlVAlUSp_tgQnDjycWO9Mg.jpg%3Fjwt%3DZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1qZ3dlRFF3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5qRTJPVFF4TWprMU1EVTROakkwTVRjaWZRLmtxV3E5b2x1eTJUM1BsRXloRWdaTjA4TkNVRnNuMmtsbGFwN2phd2s3RUU"
+              alt="이미지"
+            ></MovieImage>
             <MovieTitleArea>
               <MovieTitle>스펜서</MovieTitle>
               <Moviegenre>로맨스</Moviegenre>
@@ -53,7 +60,9 @@ function DetailMovie() {
               </div>
             </ButtonWrapper>
           </MovieClickArea>
-          <div>감독/출연</div>
+          <DirectorNameWrap>
+            <h2>감독/출연</h2>
+          </DirectorNameWrap>
           <Container>
             {/* 두개씩 들어가나 넣어본거요 */}
             <PersonArea>
@@ -80,19 +89,6 @@ export default DetailMovie;
 
 const HomeWrap = styled.div``;
 
-const SidebarArea = styled.div`
-  position: fixed;
-  top: 72px;
-  left: 0;
-  color: white;
-  /* background: #141517; */
-  background: #4068b8;
-
-  width: 240px;
-  height: 100%;
-  border-right: 1px #1b1c1d solid;
-`;
-
 const ContentsArea = styled.div`
   z-index: -1;
   display: flex;
@@ -101,7 +97,7 @@ const ContentsArea = styled.div`
   flex-direction: column;
   height: 100vh;
   padding: 72px 0 0 240px;
-  background: #141517;
+  background: #000000;
   color: white;
 `;
 
@@ -153,10 +149,12 @@ const MovieClickArea = styled.div`
 
 const ButtonWrapper = styled.div`
   display: flex;
+  border-top: 1px solid rgb(27, 28, 29);
+  border-bottom: 1px solid rgb(27, 28, 29);
   justify-content: space-between;
   /* background-color: red; */
   /* position: fixed; */
-  padding: 10px;
+  padding: 20px;
 `;
 
 const WatchButton = styled.button`
@@ -183,7 +181,7 @@ const PlusButton = styled.button`
   background-color: #000000;
   border-radius: 5px;
   font-size: 20px;
-  border: 1px solid #757575;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   width: 140px;
   height: 50px;
   color: white;
@@ -191,8 +189,7 @@ const PlusButton = styled.button`
 
 const DotButton = styled.button`
   background-color: #000000;
-  border: 1px solid #757575;
-
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 5px;
   font-size: 20px;
   width: 50px;
@@ -200,7 +197,25 @@ const DotButton = styled.button`
   color: white;
 `;
 
+const DirectorNameWrap = styled.div`
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  min-width: 0px;
+
+  h2 {
+    margin-top: 20px;
+    margin-left: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 26px;
+  }
+`;
+
 const Container = styled.div`
+  background-color: #010101;
   display: grid;
   grid-template-columns: 1fr 1fr;
 `;

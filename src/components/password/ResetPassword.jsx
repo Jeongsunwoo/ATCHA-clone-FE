@@ -8,9 +8,11 @@ import { useLocation } from "react-router-dom";
 import { createContext } from "react";
 import axios from "axios";
 import { PathContext } from "../../context/PathContext";
+import { useNavigate } from "react-router-dom";
 
 function ResetPassword() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   //주소에서 토큰뽑기
   const queryString = location.search;
@@ -34,9 +36,11 @@ function ResetPassword() {
   const pwmutation = useMutation(resetPassword, {
     onSuccess: (response) => {
       console.log("얘:", response);
+      navigate("/login");
     },
   });
 
+  //네비게이션로그인으로이동
   const resetPwHandler = () => {
     const newPassword = {
       token: queryString,

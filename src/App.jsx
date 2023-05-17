@@ -5,7 +5,7 @@ import MainPage from "./pages/MainPage";
 import Header from "./components/Layout/Header";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
-import ProfileEdit from "./pages/ProfileEdit";
+import ProfileEditPage from "./pages/ProfileEditPage";
 import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import SearchPage from "./pages/SearchPage";
@@ -14,6 +14,7 @@ import DetailMoviePage from "./pages/DetailMoviePage";
 import DetailTvPage from "./pages/DetailTvPage";
 import FindPassWordPage from "./pages/FindPassWordPage";
 import ResetPassWordPage from "./pages/ResetPassWordPage";
+import Sidebar from "./components/Layout/Sidebar";
 
 const queryClient = new QueryClient();
 
@@ -21,19 +22,18 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Header />
+        <Sidebar></Sidebar>
         <Routes>
+          <Route element={<Header />} />
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/profileedit/:id" element={<ProfileEdit />} />
+          <Route path="/profileeditpage" element={<ProfileEditPage />} />
           <Route path="/homePage" element={<HomePage />} />
-          <Route path="/profilePage/:id" element={<ProfilePage />} />
+          <Route path="/profilePage" element={<ProfilePage />} />
           <Route path="/searchPage" element={<SearchPage />} />
-          <Route path="/detailPage" element={<DetailPage />}>
-            <Route path="movie" element={<DetailMoviePage />} />
-            <Route path="tv" element={<DetailTvPage />} />
-          </Route>
+          <Route path="/detailPage" element={<DetailPage />} />
+          <Route path="/detailPage/:id" element={<DetailMoviePage />} />
           <Route path="/FindPassWord" element={<FindPassWordPage />} />
           <Route path="/resetPassword" element={<ResetPassWordPage />} />
         </Routes>
