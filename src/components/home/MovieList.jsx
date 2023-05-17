@@ -1,36 +1,28 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { allListAPI } from "../../api/listdata/allListAPI";
+import { movieList } from "../../api/listdata/movieList";
 import { styled } from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-function AllList() {
+function MovieList() {
 
   const navigate = useNavigate();
-  const { data } = useQuery("allListAPI", allListAPI);
+  const { data } = useQuery("allListAPI", movieList);
   console.log("받아온 데이터값 => ", data)
   
   return (
     <Container>
-      <Title>전체</Title>
-      <Title2>뭘 볼지 모르겠다면 여기서 골라보세요!</Title2>
+      <Title>영화</Title>
+      <Title2>한번 빠지면 돌이킬 수 없는 영화!</Title2>
       <Content>
         {data &&
           data?.map(
             (allList) => (
-              allList?.category === "MOVIE" ? (
                 <Img
                   key={allList.id}
                   onClick={() => navigate(`/detailPage/movie/${allList.id}`)}
                   src={allList.image}
                 />
-              ) : (
-                <Img
-                  key={allList.id}
-                  onClick={() => navigate(`/detailPage/tv/${allList.id}`)}
-                  src={allList.image}
-                />
-              )
             )
           )}
       </Content>
@@ -38,7 +30,7 @@ function AllList() {
   );
 }
 
-export default AllList;
+export default MovieList;
 
 const Container = styled.div`
   padding-bottom: 32px;

@@ -48,6 +48,7 @@ const Logo = styled.button`
   height: 72px;
   background: url("img/atcha.png") no-repeat center center;
   background-size: contain;
+  z-index: -100;
   border: none;
   a {
     width: 100%;

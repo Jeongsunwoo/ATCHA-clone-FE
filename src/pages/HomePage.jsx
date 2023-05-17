@@ -1,8 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import Header from "../components/Layout/Header";
-import Sidebar from "../components/Layout/Sidebar";
-import AllList from "../components/home/AllList";
+import { Outlet } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -15,7 +14,7 @@ function HomePage() {
         <ContentsArea>
           {/* 작업시작 */}
           <Container>
-            <AllList />
+            <Outlet />
           </Container>
         </ContentsArea>
       </HomeWrap>
@@ -33,19 +32,18 @@ const HomeWrap = styled.div`
   margin-top: 72px;
 `;
 
-// const SidebarArea = styled.div`
-//   display: flex;
-//   overflow: auto;
-//   background: yellow;
-//   flex: 1;
-//   max-width: 240px;
-//   height: 100vh;
-// `;
+// // const SidebarArea = styled.div`
+// //   display: flex;
+// //   overflow: auto;
+// //   background: yellow;
+// //   flex: 1;
+// //   max-width: 240px;
+// //   height: 100vh;
+// // `;
 
 const ContentsArea = styled.div`
   display: flex;
   flex: 1;
-  overflow: auto;
   width: 100%;
   height: 100vh;
 `;
@@ -55,15 +53,16 @@ const Container = styled.main`
   overflow-x: hidden;
   display: block;
   top: 25px;
+  left: 240px;
   padding: 0 calc(3.5vw + 6px);
 
-  &:after {
-    background: url("/images/home-background.png") center center / cover
-      no-repeat fixed;
-    content: "";
-    position: absolute;
-    inset: 0px;
-    opacity: 1;
-    z-index: -1;
-  }
-`;
+   &:after {
+     background: url("/images/home-background.png") center center / cover
+       no-repeat fixed;
+     content: "";
+     position: absolute;
+     inset: 0px;
+     opacity: 1;
+     z-index: -1;
+   }
+ `;
