@@ -6,29 +6,12 @@ import { detailMovie } from "../../api/detail/detailMovie";
 import { useLocation } from "react-router-dom";
 import Director from "../director/Director";
 import Review from "./Review";
-import Sidebar from "../Layout/Sidebar";
-import AllList from "../home/AllList";
 import { useParams } from "react-router-dom";
-// IoChatbubbleEllipses
+
 
 function DetailMovie() {
-  //얘가거기서 보내준아이디값
+
   const { id } = useParams();
-  // console.log("아이디:", id);
-  // console.log(currentMo);
-
-  // const { data: sunah } = useQuery("detailmovie", detailMovie);
-  // console.log("영화상세조회:", sunah);
-
-  // const MovieInfo = data.data;
-  // console.log("이거:", MovieInfo.title);
-
-  // const location = useLocation();
-  // // // 얘가아이디값
-  // const pathId = location.pathname.slice(12);
-  // console.log(pathId);
-
-  // const {  data} = useQuery("detailmovie", () => newdetailAxios(id));
 
   const { data, isLoading, isError, error } = useQuery(
     "detailMovie",

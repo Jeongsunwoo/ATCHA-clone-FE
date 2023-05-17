@@ -1,8 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import Header from "../components/Layout/Header";
-import Sidebar from "../components/Layout/Sidebar";
-import AllList from "../components/home/AllList";
+import { Outlet } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -15,7 +14,7 @@ function HomePage() {
         <ContentsArea>
           {/* 작업시작 */}
           <Container>
-            <AllList />
+            <Outlet />
           </Container>
         </ContentsArea>
       </HomeWrap>

@@ -10,17 +10,17 @@ function Sidebar() {
   const menus = [
     {
       name: "전체",
-      path: "/homepage",
+      path: "/homepage/all",
       icon: <HiOutlineFilm style={{ marginRight: "5px" }} />,
     },
     {
       name: "영화",
-      path: "/",
+      path: "/homepage/movie",
       icon: <HiOutlineFilm style={{ marginRight: "5px" }} />,
     },
     {
       name: "TV",
-      path: "/",
+      path: "/homepage/tv",
       icon: <MdOndemandVideo style={{ marginRight: "5px" }} />,
     },
   ];

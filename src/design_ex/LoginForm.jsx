@@ -28,11 +28,9 @@ function LoginForm() {
     onSuccess: (response) => {
       const token = response.headers.get("access_key").split(" ")[1];
       Cookies.set("token", token);
-
-      console.log("리스폰스데이터 =>", response.data);
       if ((response.data = "로그인 성공")) {
         alert("로그인이 완료되었습니다");
-        navigate("/");
+        navigate("/homepage/all");
       }
     },
   });

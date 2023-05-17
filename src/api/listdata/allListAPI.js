@@ -3,7 +3,6 @@ import Cookies from "js-cookie";
 
 const allListAPI = async () => {
     const token = Cookies.get("token");
-    console.log("토큰:", token);
     const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/all`,
       {
         headers: {
