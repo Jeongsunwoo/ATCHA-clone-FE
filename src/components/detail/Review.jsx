@@ -37,7 +37,7 @@ function Review() {
   //댓글추가
   const addMutation = useMutation(addReview, {
     onSuccess: () => {
-      queryClient.invalidateQueries("getReply");
+      queryClient.invalidateQueries("detailMovie");
     },
   });
 
@@ -81,11 +81,11 @@ function Review() {
           </Stars>
           <SubmitButton onClick={onSubmitClickHandler}>완료</SubmitButton>
         </SeperateReview>
-        <DetailSecondItemWrap>
+        {/* <DetailSecondItemWrap>
           <DetailSecondItemtext>{content} </DetailSecondItemtext>
           <DetailSecondItemBtn>수정</DetailSecondItemBtn>
           <DetailReplyDeleteBtn>삭제</DetailReplyDeleteBtn>
-        </DetailSecondItemWrap>
+        </DetailSecondItemWrap> */}
       </ReviewWrapper>
     </>
   );

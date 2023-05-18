@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 import { BiUser } from "react-icons/bi";
 
 function Director(listdata) {
-  console.log("리데:", listdata.listdata.name);
+  // console.log("리데:", listdata.listdata.name);
   return (
     <>
       <SepUser>

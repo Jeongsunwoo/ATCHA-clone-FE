@@ -5,7 +5,9 @@ const addReview = async (newPost) => {
   const token = Cookies.get("token");
 
   await axios.post(
-    "http://54.180.120.82:8080/atcha/media/24",
+    // `${process.env.REACT_APP_SERVER_URL}/media/${id}`,
+    `${process.env.REACT_APP_SERVER_URL}/media/1`,
+
     {
       star: newPost.star,
       content: newPost.content,

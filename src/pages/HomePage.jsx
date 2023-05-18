@@ -2,16 +2,23 @@ import React from "react";
 import { styled } from "styled-components";
 import Header from "../components/Layout/Header";
 import { Outlet } from "react-router-dom";
+import Sidebar from "../components/Layout/Sidebar";
+import Head from "../components/Layout/Head";
 
 function HomePage() {
   return (
     <>
-      <Sidebar />
+      {/* <Sidebar /> */}
+      {/* <Head>
+        <title>아챠 | 로그인</title>
+      </Head> */}
       {/* header 디자인 작업해서 넣을 예정 */}
-      <Header text="마이프로필" link="/profileeditpage" />
+      {/* <Header text="마이프로필" link="/profileeditpage" /> */}
       <HomeWrap>
-        {/* 사이드메뉴 */}
-        {/* <Sidebar /> */}
+        {/* <Head>
+          <title>아챠 | 로그인</title>
+        </Head> */}
+        <Sidebar />
         <ContentsArea>
           {/* 작업시작 */}
           <Container>
@@ -57,13 +64,13 @@ const Container = styled.main`
   left: 240px;
   padding: 0 calc(3.5vw + 6px);
 
-   &:after {
-     background: url("/images/home-background.png") center center / cover
-       no-repeat fixed;
-     content: "";
-     position: absolute;
-     inset: 0px;
-     opacity: 1;
-     z-index: -1;
-   }
- `;
+  &:after {
+    background: url("/images/home-background.png") center center / cover
+      no-repeat fixed;
+    content: "";
+    position: absolute;
+    inset: 0px;
+    opacity: 1;
+    z-index: -1;
+  }
+`;
