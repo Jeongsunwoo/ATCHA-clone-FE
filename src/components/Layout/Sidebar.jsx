@@ -56,7 +56,7 @@ const SidebarArea = styled.div`
   left: 0;
   color: white;
   background: #141517;
-  width: 240px;
+  width: 200px;
   height: 100%;
   border-right: 1px #101112 solid;
 `;

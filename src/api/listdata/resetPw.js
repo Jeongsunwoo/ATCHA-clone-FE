@@ -10,7 +10,6 @@
 // const resetPw = async (newPassword) => {
 //   try {
 //     const response = await axios.post(
-//       "http://54.180.120.82:8080/atcha/members/confirm-email{token}",
 //       newPassword
 //     );
 //     return response;

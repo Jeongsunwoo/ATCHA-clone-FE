@@ -17,14 +17,10 @@ function FindPasswordForm() {
   const mutation = useMutation(findPw, {
     onSuccess: (response) => {
       console.log("리스폰스:", response.data);
-      // console.log(response.length);
-      //얘위에가 딱성공햇을때만나오는애고
-      // navigate("/resetPassword");
+      alert(`비밀번호를 재설정할 수 있는 웹페이지 링크를 이메일 ${email} 로 보내드렸습니다.`)
     },
     onError: (error) => {
-      // console.log(mutation.error);
-      // console.log(error.data);
-      // alert("바보");
+    console.log(mutation.error);
     },
   });
 

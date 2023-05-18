@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { useQuery } from "react-query";
 import { detailMovie } from "../../api/detail/detailMovie";
-import { useLocation } from "react-router-dom";
 import Director from "../director/Director";
 import Review from "./Review";
 import { useParams } from "react-router-dom";
@@ -12,7 +11,7 @@ function DetailMovie() {
 
   const { id } = useParams();
 
-  const { data, isLoading, isError, error } = useQuery(
+  const { data } = useQuery(
     "detailMovie",
     () => detailMovie(id),
     {
@@ -20,8 +19,6 @@ function DetailMovie() {
       staleTime: 0,
     }
   );
-
-  console.log(data);
 
   return (
     <>
@@ -32,8 +29,8 @@ function DetailMovie() {
             <MovieTitleArea>
               <MovieTitle>{data?.title}</MovieTitle>
               <Moviegenre>
-                {data?.genre}
-                {data?.time}평균{data?.star}|{data?.age}
+                {data?.genre} ·
+                {data?.time} · 평균{data?.star} | {data?.age}
               </Moviegenre>
 
               <MovieInfo>{data?.information}</MovieInfo>
@@ -201,8 +198,7 @@ const DirectorNameWrap = styled.div`
 `;
 
 const Container = styled.div`
-  background-color: #010101;
-  display: grid;
+  background-color: black;
   grid-template-columns: 1fr 1fr;
 `;
 

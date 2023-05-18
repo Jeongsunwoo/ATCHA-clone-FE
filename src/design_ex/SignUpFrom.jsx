@@ -18,9 +18,10 @@ function SignupForm() {
   const signUpMutation = useMutation(signUpUser, {
     onSuccess: (response) => {
       console.log("성공여부:", response);
-      alert("회원가입 완료!")
-      navigate("/login");
     },
+    onError: (error) => {
+      alert("에러발생 : ",error)
+    }
   });
 
   const onChangeSignUpContent = (e) => {

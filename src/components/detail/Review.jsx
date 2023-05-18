@@ -81,11 +81,6 @@ function Review() {
           </Stars>
           <SubmitButton onClick={onSubmitClickHandler}>완료</SubmitButton>
         </SeperateReview>
-        <DetailSecondItemWrap>
-          <DetailSecondItemtext>{content} </DetailSecondItemtext>
-          <DetailSecondItemBtn>수정</DetailSecondItemBtn>
-          <DetailReplyDeleteBtn>삭제</DetailReplyDeleteBtn>
-        </DetailSecondItemWrap>
       </ReviewWrapper>
     </>
   );
@@ -139,9 +134,10 @@ const InputBox = styled.input`
 `;
 
 const SubmitButton = styled.button`
+  width: 50px;
   height: 40px;
   margin: 4px 20px;
-
+  border-radius: 12px;
   background-color: #f82f62;
 `;
 

@@ -24,16 +24,19 @@ const useInput = () => {
 
   return [value, hanlder];
 };
-// "http://54.180.120.82:8080/atcha/
 const upDatePost = async (payload) => {
   console.log("페이로드 값 => ", payload);
   const token = Cookies.get("token");
-  await axios.put(`${process.env.REACT_APP_SERVER_URL}/members/mypage`, {
-    payload,
-    headers: {
+  await axios.put(`${process.env.REACT_APP_SERVER_URL}/members/mypage`,
+  {
+    nickname: payload.nickname
+  },
+  {
+      headers: {
       ACCESS_KEY: `Bearer ${token}`,
-    },
-  });
+    }
+  }
+  );
 };
 
 export { proFileList, useInput, upDatePost };

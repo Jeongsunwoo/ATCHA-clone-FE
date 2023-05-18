@@ -34,8 +34,8 @@ function ResetPassword() {
   };
 
   const pwmutation = useMutation(resetPassword, {
-    onSuccess: (response) => {
-      console.log("얘:", response);
+    onSuccess: () => {
+      alert("비밀번호 변경완료!")
       navigate("/login");
     },
   });
