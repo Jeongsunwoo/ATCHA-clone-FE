@@ -6,26 +6,12 @@ import { detailMovie } from "../../api/detail/detailMovie";
 import { useLocation } from "react-router-dom";
 import Director from "../director/Director";
 import Review from "./Review";
-import Sidebar from "../Layout/Sidebar";
-import AllList from "../home/AllList";
 import { useParams } from "react-router-dom";
-// IoChatbubbleEllipses
 
 function DetailMovie() {
-  //얘가거기서 보내준아이디값
+
   const { id } = useParams();
-  // console.log("아이디:", id);
-  // console.log(currentMo);
 
-  // const MovieInfo = data.data;
-  // console.log("이거:", MovieInfo.title);
-
-  // const location = useLocation();
-  // // // 얘가아이디값
-  // const pathId = location.pathname.slice(12);
-  // console.log(pathId);
-
-  // 얘아래부터데이터가져옴;
   const { data, isLoading, isError, error } = useQuery(
     "detailMovie",
     () => detailMovie(id),

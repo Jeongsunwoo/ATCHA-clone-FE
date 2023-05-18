@@ -15,23 +15,16 @@ import FindPassWordPage from "./pages/FindPassWordPage";
 import ResetPassWordPage from "./pages/ResetPassWordPage";
 import Sidebar from "./components/Layout/Sidebar";
 import DetailTvPage from "./pages/DetailTvPage";
-import LoginPageWithSidebar from "./pages/LoginPageWithSidebar";
+import MovieList from "./components/home/MovieList";
+import TvList from "./components/home/TvList";
+import AllList from "./components/home/AllList";
 
 const queryClient = new QueryClient();
 
 function App() {
-  // const location = useLocation();
-  // const showSidebarPaths = [
-  //   "/homePage",
-  //   "/detailPage",
-  //   "/detailPage/movie/:id",
-  //   "/detailPage/tv/:id",
-  // ];
-  // const shouldShowSidebar = showSidebarPaths.includes(location.pathname);
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        {/* {shouldShowSidebar && <Sidebar />} */}
         <Routes>
           <Route element={<Header />} />
           <Route path="/" element={<MainPage />} />
@@ -39,13 +32,16 @@ function App() {
 
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/profileeditpage" element={<ProfileEditPage />} />
-          <Route path="/homePage" element={<HomePage />} />
+          <Route path="/homePage" element={<HomePage />}>
+            <Route path="/homePage/all" element={<AllList />}></Route>
+            <Route path="/homePage/movie" element={<MovieList />}></Route>
+            <Route path="/homePage/tv" element={<TvList />}></Route>
+          </Route>
           <Route path="/profilePage" element={<ProfilePage />} />
           <Route path="/searchPage" element={<SearchPage />} />
           <Route path="/detailPage" element={<DetailPage />} />
           <Route path="/detailPage/movie/:id" element={<DetailMoviePage />} />
           <Route path="/detailPage/tv/:id" element={<DetailTvPage />} />
-
           <Route path="/FindPassWord" element={<FindPassWordPage />} />
           <Route path="/resetPassword" element={<ResetPassWordPage />} />
         </Routes>
