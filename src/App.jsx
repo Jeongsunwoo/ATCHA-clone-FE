@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import MainPage from "./pages/MainPage";
 import Header from "./components/Layout/Header";
@@ -25,7 +25,6 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Sidebar></Sidebar>
         <Routes>
           <Route element={<Header />} />
           <Route path="/" element={<MainPage />} />
@@ -33,7 +32,7 @@ function App() {
 
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/profileeditpage" element={<ProfileEditPage />} />
-          <Route path="/homePage" element={<HomePage />} >
+          <Route path="/homePage" element={<HomePage />}>
             <Route path="/homePage/all" element={<AllList />}></Route>
             <Route path="/homePage/movie" element={<MovieList />}></Route>
             <Route path="/homePage/tv" element={<TvList />}></Route>
