@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import MainPage from "./pages/MainPage";
 import Header from "./components/Layout/Header";
@@ -20,10 +20,18 @@ import LoginPageWithSidebar from "./pages/LoginPageWithSidebar";
 const queryClient = new QueryClient();
 
 function App() {
+  // const location = useLocation();
+  // const showSidebarPaths = [
+  //   "/homePage",
+  //   "/detailPage",
+  //   "/detailPage/movie/:id",
+  //   "/detailPage/tv/:id",
+  // ];
+  // const shouldShowSidebar = showSidebarPaths.includes(location.pathname);
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Sidebar></Sidebar>
+        {/* {shouldShowSidebar && <Sidebar />} */}
         <Routes>
           <Route element={<Header />} />
           <Route path="/" element={<MainPage />} />

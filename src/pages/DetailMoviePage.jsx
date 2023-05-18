@@ -11,7 +11,7 @@ import AllList from "../components/home/AllList";
 function DetailMoviePage() {
   return (
     <>
-      {/* <Sidebar /> */}
+      <Sidebar />
       <DetailMovie />
     </>
   );
