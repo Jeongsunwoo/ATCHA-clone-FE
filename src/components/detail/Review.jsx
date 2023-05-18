@@ -7,7 +7,7 @@ import { useMutation } from "react-query";
 import { useQueryClient } from "react-query";
 import { addReview } from "../../api/detail/review";
 
-function Review() {
+function Review({tvid , movieid}) {
   const [content, setContent] = useState();
   const queryClient = useQueryClient();
   const ARRAY = [0, 1, 2, 3, 4];

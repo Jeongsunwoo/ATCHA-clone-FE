@@ -1,7 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
 function Reviewlist(reviewdata) {
-  console.log("ㅎㅎ:", reviewdata);
 
   return (
     <>
@@ -10,7 +9,6 @@ function Reviewlist(reviewdata) {
         <DetailSecondItemtext>
           {reviewdata?.reviewdata?.content}
         </DetailSecondItemtext>
-        <DetailSecondItemBtn>수정</DetailSecondItemBtn>
         <DetailReplyDeleteBtn>삭제</DetailReplyDeleteBtn>
       </DetailSecondItemWrap>
     </>
@@ -19,7 +17,7 @@ function Reviewlist(reviewdata) {
 
 export default Reviewlist;
 
-const DetailSecondItemWrap = styled.form`
+const DetailSecondItemWrap = styled.div`
   margin: 20px;
   padding: 20px;
   background-color: #484848;
@@ -28,6 +26,7 @@ const DetailSecondItemWrap = styled.form`
   margin-bottom: 20px;
   position: relative;
 `;
+
 const DetailSecondItemtext = styled.p`
   color: red;
   font-size: 20px;
@@ -36,14 +35,7 @@ const DetailSecondItemtext = styled.p`
   white-space: pre-wrap;
   margin: 4px 0px;
 `;
-const DetailSecondItemInput = styled.input`
-  margin-top: 50px;
-  height: 30px;
-  width: 100%;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid black;
-`;
+
 const DetailSecondItemBtn = styled.button`
   position: absolute;
   width: 60px;
@@ -66,6 +58,11 @@ const DetailReplyDeleteBtn = styled.button`
   background-color: white;
   font-weight: 900;
   border: 1px solid black;
+  color: black; /* 추가: 버튼 텍스트 색상 */
+  position: absolute; /* 추가: 위치 설정 */
+  right: 25px; /* 추가: 위치 설정 */
+  top: 28px; /* 추가: 위치 설정 */
+  cursor: pointer;
   &:hover {
     background-color: #f79191;
     transition: all 0.3s;

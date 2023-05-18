@@ -1,29 +1,63 @@
-# --- COMMIT END ---
-#   <타입> 리스트
-#   feat        : 기능 (새로운 기능)
-#   fix         : 버그 (버그 수정)
-#   refactor    : 리팩토링
-#   design      : CSS 등 사용자 UI 디자인 변경
-#   comment     : 필요한 주석 추가 및 변경
-#   style       : 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없음)
-#   docs        : 문서 수정 (문서 추가, 수정, 삭제, README)
-#   test        : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)
-#   chore       : 기타 변경사항 (빌드 스크립트 수정, assets, 패키지 매니저 등)a
-#   init        : 초기 생성
-#   rename      : 파일 혹은 폴더명을 수정하거나 옮기는 작업만 한 경우
-#   remove      : 파일을 삭제하는 작업만 수행한 경우
-# ------------------
-#   제목 첫 글자를 대문자로
-#   제목은 명령문으로
-#   제목 끝에 마침표(.) 금지
-#   제목과 본문을 한 줄 띄워 분리하기
-#   본문은 "어떻게" 보다 "무엇을", "왜"를 설명한다.
-#   본문에 여러줄의 메시지를 작성할 땐 "-"로 구분
-# ------------------
-#   <꼬리말>
-#   필수가 아닌 optioanl
-#   Fixes        :이슈 수정중 (아직 해결되지 않은 경우)
-#   Resolves     : 이슈 해결했을 때 사용
-#   Ref          : 참고할 이슈가 있을 때 사용
-#   Related to   : 해당 커밋에 관련된 이슈번호 (아직 해결되지 않은 경우)
-#   ex) Fixes: #47 Related to: #32, #21
+### 1. 프로젝트 기간
+
+<!-- 2023.05.11 ~ 2023.05.18 -->
+
+<br />
+
+## 🕹️ Stack
+
+### 패키지 설치
+
+1. 상태 관리 : react-query
+2. Routing : react-router-dom
+3. 데이터 통신 : axios
+4. mock-server : JSON-server
+5. CSS : styled component
+
+<br />
+
+## ✨ Page 및 컴포넌트 설계
+
+### Page 설계
+
+- HomePage
+- DetailPage
+- PostingPage
+- MainPage
+- ProfilePage
+
+### common 컴포넌트 설계
+
+- Header
+- Sidebar
+
+### 컴포넌트 설계
+
+- detail
+- home
+- Layout
+- main
+- Post
+- profile
+- Update
+- Login
+- Signup
+
+<br />
+
+## ✅ Commit Convention
+
+```
+Feat:	새로운 기능 추가
+Fix:	버그 수정 또는 typo
+Refactor:	리팩토링
+Design:	CSS 등 사용자 UI 디자인 변경
+Comment:	필요한 주석 추가 및 변경
+Style:	코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
+Test:	테스트(테스트 코드 추가, 수정, 삭제, 비즈니스 로직에 변경이 없는 경우)
+Chore:	위에 걸리지 않는 기타 변경사항(빌드 스크립트 수정, assets image, 패키지 매니저 등)
+Init:	프로젝트 초기 생성
+Rename:	파일 혹은 폴더명 수정하거나 옮기는 경우
+Remove:	파일을 삭제하는 작업만 수행하는 경우
+Docs : README.md 텍스트 파일 수정하는 경우
+```

@@ -75,13 +75,8 @@ function DetailTv() {
               })}
             </PersonArea>
           </Container>
-
           <Review />
-          <DetailSecondItemWrap>
-            <DetailSecondItemtext> </DetailSecondItemtext>
-            <DetailSecondItemBtn>수정</DetailSecondItemBtn>
-            <DetailReplyDeleteBtn>삭제</DetailReplyDeleteBtn>
-          </DetailSecondItemWrap>
+
         </ContentsArea>
       </HomeWrap>
     </>
