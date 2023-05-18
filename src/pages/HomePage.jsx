@@ -6,6 +6,7 @@ import { Outlet } from "react-router-dom";
 function HomePage() {
   return (
     <>
+      <Sidebar />
       {/* header 디자인 작업해서 넣을 예정 */}
       <Header text="마이프로필" link="/profileeditpage" />
       <HomeWrap>
