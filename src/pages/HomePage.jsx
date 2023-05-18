@@ -7,11 +7,7 @@ import Sidebar from "../components/Layout/Sidebar";
 function HomePage() {
   return (
     <>
-      {/* <Sidebar /> */}
-      {/* header 디자인 작업해서 넣을 예정 */}
-      <Header text="마이프로필" link="/profileeditpage" />
       <HomeWrap>
-        {/* 사이드메뉴 */}
         <Sidebar />
         <ContentsArea>
           {/* 작업시작 */}
@@ -58,13 +54,13 @@ const Container = styled.main`
   left: 240px;
   padding: 0 calc(3.5vw + 6px);
 
-   &:after {
-     background: url("/images/home-background.png") center center / cover
-       no-repeat fixed;
-     content: "";
-     position: absolute;
-     inset: 0px;
-     opacity: 1;
-     z-index: -1;
-   }
- `;
+  &:after {
+    background: url("/images/home-background.png") center center / cover
+      no-repeat fixed;
+    content: "";
+    position: absolute;
+    inset: 0px;
+    opacity: 1;
+    z-index: -1;
+  }
+`;

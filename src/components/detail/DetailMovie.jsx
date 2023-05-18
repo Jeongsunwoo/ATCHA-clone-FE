@@ -6,9 +6,11 @@ import { detailMovie } from "../../api/detail/detailMovie";
 import Director from "../director/Director";
 import Review from "./Review";
 import { useParams } from "react-router-dom";
+import Head from "../Layout/Head";
+import Header from "../Layout/Header";
+import Reviewlist from "../director/Reviewlist";
 
 function DetailMovie() {
-
   const { id } = useParams();
 
   const { data } = useQuery(
@@ -22,6 +24,7 @@ function DetailMovie() {
 
   return (
     <>
+      {/* <Header /> */}
       <HomeWrap>
         <ContentsArea>
           <MovieInfoArea>
@@ -63,6 +66,10 @@ function DetailMovie() {
           </Container>
 
           <Review />
+
+          {data?.reviewList.map((item) => {
+            return <Reviewlist key={item.id} reviewdata={item} />;
+          })}
         </ContentsArea>
       </HomeWrap>
     </>
@@ -210,4 +217,56 @@ const PersonArea = styled.div`
   gap: 10px;
   padding: 10px;
   background-color: #000000;
+`;
+const DetailSecondItemWrap = styled.form`
+  margin: 20px;
+  padding: 20px;
+  background-color: #484848;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+`;
+const DetailSecondItemtext = styled.p`
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 20px;
+  white-space: pre-wrap;
+  margin: 4px 0px;
+`;
+const DetailSecondItemInput = styled.input`
+  margin-top: 50px;
+  height: 30px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+`;
+const DetailSecondItemBtn = styled.button`
+  position: absolute;
+  width: 60px;
+  height: 25px;
+  right: 25px;
+  bottom: 28px;
+  font-weight: 900;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  &:hover {
+    background-color: #f7ddde;
+    transition: all 0.3s;
+  }
+`;
+
+const DetailReplyDeleteBtn = styled.button`
+  width: 60px;
+  height: 25px;
+  background-color: white;
+  font-weight: 900;
+  border: 1px solid black;
+  &:hover {
+    background-color: #f79191;
+    transition: all 0.3s;
+    color: white;
+  }
 `;

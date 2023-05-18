@@ -37,7 +37,7 @@ function Review() {
   //댓글추가
   const addMutation = useMutation(addReview, {
     onSuccess: () => {
-      queryClient.invalidateQueries("getReply");
+      queryClient.invalidateQueries("detailMovie");
     },
   });
 

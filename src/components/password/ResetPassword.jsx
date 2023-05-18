@@ -48,6 +48,7 @@ function ResetPassword() {
     };
 
     pwmutation.mutate(newPassword);
+    navigate("/login");
   };
 
   return (
