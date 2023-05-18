@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 
 function ProFileEdit() {
   const { data } = useQuery("profilelist", proFileList);
-  console.log("프로필 조회", data);
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [input, setInput] = useInput("");
@@ -21,7 +20,6 @@ function ProFileEdit() {
       queryClient.invalidateQueries("profilelist");
     },
     onError: () => {
-      alert("수정 실패!");
     },
   });
 
@@ -31,9 +29,9 @@ function ProFileEdit() {
       return;
     }
 
-    const updatedPost = new FormData();
-    updatedPost.append("imageFile", input);
-    updatedPost.append("nickname", input);
+    const updatedPost = {
+    nickname: input
+    }
 
     mutation.mutate(updatedPost);
   };

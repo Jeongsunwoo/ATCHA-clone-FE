@@ -2,12 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { useQuery } from "react-query";
-import { detailMovie } from "../../api/detail/detailMovie";
-import { useLocation } from "react-router-dom";
 import Director from "../director/Director";
 import Review from "./Review";
-import Sidebar from "../Layout/Sidebar";
-import AllList from "../home/AllList";
 import { useParams } from "react-router-dom";
 import { detailTv } from "../../api/detail/detailTv";
 // IoChatbubbleEllipses
@@ -46,7 +42,7 @@ function DetailTv() {
             <MovieTitleArea>
               <MovieTitle>{data?.title}</MovieTitle>
               <Moviegenre>
-                {data?.genre}/평균{data?.star}
+                {data?.genre} · 평균{data?.star} |
                 <br />
                 {data?.age}
               </Moviegenre>
@@ -144,6 +140,16 @@ const Moviegenre = styled.div`
 
 const MovieInfo = styled.div`
   margin-top: 10px;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 9;
+color: rgb(186, 186, 193);
+font-size: 15px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 20px;
+max-width: 600px;
+margin: 10px 0px 0px;
+overflow: hidden;
 `;
 const MovieClickArea = styled.div`
   /* border-style: solid; */
@@ -221,8 +227,7 @@ const DirectorNameWrap = styled.div`
 `;
 
 const Container = styled.div`
-  background-color: #010101;
-  display: grid;
+  background-color: black;
   grid-template-columns: 1fr 1fr;
 `;
 

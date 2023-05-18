@@ -54,22 +54,13 @@ function Sidebar() {
 export default Sidebar;
 
 const SidebarArea = styled.div`
-  /* position: fixed;
-  top: 72px;
-  left: 0;
-  color: white;
-  background: #141517;
-  background-color: pink;
-  width: 240px;
-  height: 100%;
-  border-right: 1px #101112 solid; */
 
   position: fixed;
   top: 0;
   left: 0;
   z-index: 501;
   background: #141517;
-  width: 240px;
+  width: 200px;
   height: 100%;
   border-right: 1px #1b1c1d solid;
 `;

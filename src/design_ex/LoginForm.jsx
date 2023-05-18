@@ -32,16 +32,18 @@ function LoginForm() {
         alert("로그인이 완료되었습니다");
         navigate("/homepage/all");
       }
-    },
+    },onError: (error) => {
+      alert("아이디 비밀번호를 확인해주세요")
+    }
   });
 
   const loginHandler = (e) => {
     e.preventDefault();
 
     if (!login.email) {
-      alert("아이디 입력");
+      alert("아이디를 입력해주세요");
     } else if (!login.password) {
-      alert("비밀번호 입력");
+      alert("비밀번호를 입력해주세요");
     }
     const newlogin = {
       email: login.email,

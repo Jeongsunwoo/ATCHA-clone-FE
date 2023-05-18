@@ -6,7 +6,7 @@ import Header from "../components/Layout/Header";
 function DetailTvPage() {
   return (
     <>
-      <Header />
+      <Header text="마이프로필" link="/profileeditpage" />
       <Sidebar />
       <DetailTv />
     </>
